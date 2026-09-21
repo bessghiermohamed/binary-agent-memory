@@ -22,36 +22,8 @@
     {
       "id": "t_f1vlta",
       "what": "إرسال تذكير الساعة 7:46 بتوقيت الجزائر",
-      "dueAt": 1790069775006,
-      "createdAt": 1789983435006,
-      "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_m3gwgg",
-      "what": "إرسال تذكير الساعة 7:46 بتوقيت الجزائر",
-      "dueAt": 1790095560000,
-      "createdAt": 1789983636168,
-      "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_wx39il",
-      "what": "تنبيه الساعة 7:40",
-      "dueAt": 1790070184621,
-      "createdAt": 1789983844621,
-      "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_11gi5y",
-      "what": "تنبيه الساعة 7:40",
-      "dueAt": 1790062800000,
-      "createdAt": 1789998597653,
-      "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_6u6tbeo",
-      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
       "dueAt": 1790059560000,
-      "createdAt": 1790000062284,
+      "createdAt": 1789983435006,
       "goalId": "g_73bhc2"
     }
   ],
@@ -68,7 +40,7 @@
   },
   "ownerName": "Reverend insanity",
   "meta": {
-    "repo": "bessghiermohamed/agent-memory",
+    "repo": "bessghiermohamed/binary-agent-memory",
     "built": "2026-09-21"
   },
   "llmSnapshot": {
