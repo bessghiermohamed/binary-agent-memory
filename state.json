@@ -12,10 +12,10 @@
     "startedAt": 1789981212162
   },
   "lastAction": {
-    "tool": "schedule_task",
-    "summary": "scheduled",
+    "tool": "send_message",
+    "summary": "send_message: {\"ok\":true}",
     "ok": true,
-    "ts": 1789983975515
+    "ts": 1789989902519
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
@@ -48,23 +48,16 @@
       "dueAt": 1790070184621,
       "createdAt": 1789983844621,
       "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_ghqnoy",
-      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر",
-      "dueAt": 1789987574604,
-      "createdAt": 1789983974604,
-      "goalId": "g_73bhc2"
     }
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 107,
-    "ticks": 41
+    "llm": 108,
+    "ticks": 42
   },
   "totals": {
-    "ticks": 79,
-    "llm": 154,
+    "ticks": 80,
+    "llm": 155,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
