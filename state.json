@@ -9,15 +9,17 @@
   },
   "lastAction": {
     "tool": "schedule_task",
-    "summary": "جُدولت \"تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب\" عند 2026-09-22 07:46 بتوقيت الجزائر (t_6u6tbeo)",
+    "summary": "جُدولت \"تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب\" عند 2026-09-21 17:52 بتوقيت الجزائر (t_yyf3iad)",
     "ok": true,
-    "ts": 1790000062284
+    "ts": 1790009516698
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 0,
-  "chainDispatchLog": [],
+  "lastChainDispatchAt": 1790009517804,
+  "chainDispatchLog": [
+    1790009517804
+  ],
   "nextWakeAt": 0,
-  "chainCount": 0,
+  "chainCount": 1,
   "scheduled": [
     {
       "id": "t_f1vlta",
@@ -25,16 +27,23 @@
       "dueAt": 1790059560000,
       "createdAt": 1789983435006,
       "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_yyf3iad",
+      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
+      "dueAt": 1790009576698,
+      "createdAt": 1790009516698,
+      "goalId": "g_73bhc2"
     }
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 190,
-    "ticks": 56
+    "llm": 191,
+    "ticks": 57
   },
   "totals": {
-    "ticks": 94,
-    "llm": 237,
+    "ticks": 95,
+    "llm": 238,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -56,8 +65,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For m",
-    "at": 1790000063464
+    "lastProvider": "cohere",
+    "lastError": "HTTP 503 [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually tem",
+    "at": 1790009517804
   }
 }
