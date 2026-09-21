@@ -2,11 +2,7 @@
   "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
-  "currentTask": {
-    "goalId": "g_73bhc2",
-    "note": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
-    "startedAt": 1789981212162
-  },
+  "currentTask": null,
   "lastAction": {
     "tool": "update_goal",
     "summary": "update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)",
@@ -15,20 +11,10 @@
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
-  "chainDispatchLog": [
-    1790009517804
-  ],
+  "chainDispatchLog": [],
   "nextWakeAt": 0,
   "chainCount": 0,
-  "scheduled": [
-    {
-      "id": "t_f1vlta",
-      "what": "إرسال تذكير الساعة 7:46 بتوقيت الجزائر",
-      "dueAt": 1790059560000,
-      "createdAt": 1789983435006,
-      "goalId": "g_73bhc2"
-    }
-  ],
+  "scheduled": [],
   "counters": {
     "day": "2026-09-21",
     "llm": 197,
