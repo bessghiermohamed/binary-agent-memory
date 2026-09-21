@@ -8,10 +8,10 @@
     "startedAt": 1789981212162
   },
   "lastAction": {
-    "tool": "schedule_task",
-    "summary": "جُدولت \"تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب\" عند 2026-09-21 17:52 بتوقيت الجزائر (t_yyf3iad)",
-    "ok": true,
-    "ts": 1790009516698
+    "tool": "update_goal",
+    "summary": "update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)",
+    "ok": false,
+    "ts": 1790009528010
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
@@ -19,7 +19,7 @@
     1790009517804
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 0,
   "scheduled": [
     {
       "id": "t_f1vlta",
@@ -38,12 +38,12 @@
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 191,
-    "ticks": 57
+    "llm": 192,
+    "ticks": 58
   },
   "totals": {
-    "ticks": 95,
-    "llm": 238,
+    "ticks": 96,
+    "llm": 239,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -54,19 +54,16 @@
   },
   "llmSnapshot": {
     "ready": [
-      "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
-      "pollinations",
       "pollinations-mistral",
       "grok",
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cohere",
+    "lastProvider": "mistral",
     "lastError": "HTTP 503 [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually tem",
-    "at": 1790009517804
+    "at": 1790009529048
   }
 }
