@@ -2,7 +2,6 @@
   "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
-  "ownerName": "Reverend insanity",
   "currentTask": {
     "goalId": "g_73bhc2",
     "note": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
@@ -10,13 +9,15 @@
   },
   "lastAction": {
     "tool": "schedule_task",
-    "summary": "scheduled",
+    "summary": "جُدولت \"تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب\" عند 2026-09-22 07:46 بتوقيت الجزائر (t_6u6tbeo)",
     "ok": true,
-    "ts": 1789998598703
+    "ts": 1790000062284
   },
   "lastInitiativeAt": 1789932511919,
+  "lastChainDispatchAt": 0,
+  "chainDispatchLog": [],
   "nextWakeAt": 0,
-  "chainCount": 4,
+  "chainCount": 0,
   "scheduled": [
     {
       "id": "t_f1vlta",
@@ -45,21 +46,46 @@
       "dueAt": 1790062800000,
       "createdAt": 1789998597653,
       "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_6u6tbeo",
+      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
+      "dueAt": 1790059560000,
+      "createdAt": 1790000062284,
+      "goalId": "g_73bhc2"
     }
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 172,
-    "ticks": 55
+    "llm": 173,
+    "ticks": 56
   },
   "totals": {
-    "ticks": 93,
-    "llm": 219,
+    "ticks": 94,
+    "llm": 220,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
+  "ownerName": "Reverend insanity",
   "meta": {
     "repo": "bessghiermohamed/agent-memory",
     "built": "2026-09-21"
+  },
+  "llmSnapshot": {
+    "ready": [
+      "gemini",
+      "openrouter",
+      "cohere",
+      "mistral",
+      "cloudflare",
+      "pollinations",
+      "pollinations-mistral",
+      "grok",
+      "groq",
+      "huggingface"
+    ],
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 429 [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For m",
+    "at": 1790000063464
   }
 }
