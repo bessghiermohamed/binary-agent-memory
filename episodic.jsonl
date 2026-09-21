@@ -250,3 +250,4 @@
 {"ts":1790010093120,"text":"error: decision parse failed (mode=scheduled) — المزودات لم ترد","ok":false}
 {"ts":1790010124053,"text":"[17:02:04] scheduled: تعديل تذكير الساعة 7:46 بتوقيت الجزائر يتطلب تحديث هدف مجدول سابق (t_yyf3iad) بدلاً من إنشاء جديد، لذا يجب إلغاء المجدول → update_goal: update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)","mode":"scheduled","tool":"update_goal","ok":false,"goalId":"g_73bhc2"}
 {"ts":1790010125463,"text":"scheduled-fired: تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب","ok":true}
+{"ts":1790010742127,"text":"[17:12:22] task: البحث عن طرق لتحقيق الاكتفاء المالي → web_search: • قانون المشروعات في المملكة المتحدة — https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA_%D9%8","mode":"task","tool":"web_search","ok":true,"goalId":"g_2j9yae"}
