@@ -100,7 +100,9 @@
       "origin": "owner:Reverend insanity",
       "createdAt": 1789973251111,
       "updatedAt": 1789997869775,
-      "notes": []
+      "notes": [
+        "merged duplicate g_65kjiz during v3 hygiene"
+      ]
     },
     {
       "id": "g_ar4hgd",
@@ -139,17 +141,6 @@
       "result": "الاختبار أُلغي قبل التنفيذ"
     },
     {
-      "id": "g_on0p98",
-      "title": "#g_zg4tdf",
-      "description": "1. البحث عن أحدث إصدارات شات جبتي. 2. جمع المعلومات حول المميزات الجديدة. 3. توثيق النتائج في سجل الأهداف.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789981774326,
-      "updatedAt": 1789981774326,
-      "notes": []
-    },
-    {
       "id": "g_2j9yae",
       "title": "البحث عن طرق لتحقيق الاكتفاء المالي",
       "description": "البحث عن مصادر دخل بديلة لتشغيلي، مثل الدعم المالي أو الخدمات المقدمة",
@@ -172,39 +163,6 @@
       "notes": []
     },
     {
-      "id": "g_cimu4p",
-      "title": "#g_5vx7jw",
-      "description": "1. البحث عن تفاصيل تقنية عن **Gemini 1.5 Pro** (قدرات المعالجة، تحسينات جديدة، مقارنة مع الإصدارات السابقة). 2. جمع معلومات حول كيفية الوصول إليه أو استخدامه (API أو واجهة مستخدم). 3. توثيق النتائج في سجل الأهداف مع توصيات لاستخدامه في تحسين أدائي.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789983826776,
-      "updatedAt": 1789983826776,
-      "notes": []
-    },
-    {
-      "id": "g_lhci23",
-      "title": "#g_tj8d3p",
-      "description": "تطوير الذات",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789983953243,
-      "updatedAt": 1789983953243,
-      "notes": []
-    },
-    {
-      "id": "g_pm49st",
-      "title": "#g_new1",
-      "description": "مراقبة تذكير الساعة 7:40",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789989969558,
-      "updatedAt": 1789989969558,
-      "notes": []
-    },
-    {
       "id": "g_o8355o",
       "title": "تحسين قدراتي في استقبال الأهداف الجديدة",
       "description": "تحسين قدراتي في استقبال الأهداف الجديدة وتحقيقها بفعالية، بالإضافة إلى تعزيز مهاراتي في التعلم المستمر والتحسين الذاتي",
@@ -213,17 +171,6 @@
       "origin": "owner:Reverend insanity",
       "createdAt": 1789991344374,
       "updatedAt": 1789991344374,
-      "notes": []
-    },
-    {
-      "id": "g_65kjiz",
-      "title": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
-      "description": "1. تعديل الهدف ليشمل توقيت الجزائر (UTC+1) والتذكير في تمام الساعة 7:46 مساءً غدًا، 22 سبتمبر 2026. 2. إضافة تنبيه عند الساعة 7:40 لتجنب نسيان إرسال الرسالة. 3. التأكد من أن الرسالة ستوضع بشكل تلقائي في الوقت المحدد. 4. تسجيل التاريخ والتوقيت الجديد في سجل الأهداف. 5. التأكد من أن جميع الأهداف السابقة تتوافق مع التغييرات.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789993456289,
-      "updatedAt": 1789993456289,
       "notes": []
     },
     {
@@ -246,62 +193,16 @@
       "origin": "owner:Reverend insanity",
       "createdAt": 1789997841080,
       "updatedAt": 1789997841080,
-      "notes": []
-    },
-    {
-      "id": "g_hktnph",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789997856397,
-      "updatedAt": 1789997856397,
-      "notes": []
-    },
-    {
-      "id": "g_et41xl",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789997879741,
-      "updatedAt": 1789997879741,
-      "notes": []
-    },
-    {
-      "id": "g_8l2ees",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789998572331,
-      "updatedAt": 1789998572331,
-      "notes": []
-    },
-    {
-      "id": "g_9ot6hm",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789999530613,
-      "updatedAt": 1789999530613,
-      "notes": []
-    },
-    {
-      "id": "g_krsegf",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789999551989,
-      "updatedAt": 1789999551989,
-      "notes": []
+      "notes": [
+        "merged duplicate g_hktnph during v3 hygiene",
+        "merged duplicate g_et41xl during v3 hygiene",
+        "merged duplicate g_8l2ees during v3 hygiene",
+        "merged duplicate g_9ot6hm during v3 hygiene",
+        "merged duplicate g_krsegf during v3 hygiene"
+      ]
     }
+  ],
+  "_hygiene": [
+    "hygiene 2026-09-21 14:19 UTC: removed 10 contaminated goals"
   ]
 }
