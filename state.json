@@ -2,12 +2,16 @@
   "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
-  "currentTask": null,
+  "currentTask": {
+    "goalId": "g_2j9yae",
+    "note": "البحث عن طرق لتحقيق الاكتفاء المالي",
+    "startedAt": 1790010739501
+  },
   "lastAction": {
-    "tool": "update_goal",
-    "summary": "update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)",
-    "ok": false,
-    "ts": 1790010124053
+    "tool": "web_search",
+    "summary": "• قانون المشروعات في المملكة المتحدة — https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D9%85%D9%84%D",
+    "ok": true,
+    "ts": 1790010742127
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
@@ -17,12 +21,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-21",
-    "llm": 206,
-    "ticks": 59
+    "llm": 207,
+    "ticks": 60
   },
   "totals": {
-    "ticks": 97,
-    "llm": 253,
+    "ticks": 98,
+    "llm": 254,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -33,13 +37,19 @@
   },
   "llmSnapshot": {
     "ready": [
+      "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
+      "pollinations",
+      "huggingface-qwen",
+      "grok",
+      "groq",
       "huggingface"
     ],
-    "lastProvider": "cohere",
-    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | groq: HTTP 404",
-    "at": 1790010127953
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790010743353
   }
 }
