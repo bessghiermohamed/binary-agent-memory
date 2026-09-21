@@ -11,7 +11,7 @@
     "tool": "update_goal",
     "summary": "update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)",
     "ok": false,
-    "ts": 1790009528010
+    "ts": 1790010124053
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
@@ -27,23 +27,16 @@
       "dueAt": 1790059560000,
       "createdAt": 1789983435006,
       "goalId": "g_73bhc2"
-    },
-    {
-      "id": "t_yyf3iad",
-      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
-      "dueAt": 1790009576698,
-      "createdAt": 1790009516698,
-      "goalId": "g_73bhc2"
     }
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 193,
-    "ticks": 58
+    "llm": 194,
+    "ticks": 59
   },
   "totals": {
-    "ticks": 96,
-    "llm": 240,
+    "ticks": 97,
+    "llm": 241,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -57,13 +50,10 @@
       "cohere",
       "mistral",
       "cloudflare",
-      "pollinations-mistral",
-      "grok",
-      "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "HTTP 503 [{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually tem",
-    "at": 1790009529048
+    "lastProvider": "cohere",
+    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | groq: HTTP 404",
+    "at": 1790010127953
   }
 }
