@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mubhshbf-c9ja",
+    "at": 1790010090704,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": {
@@ -38,12 +42,12 @@
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 192,
+    "llm": 193,
     "ticks": 58
   },
   "totals": {
     "ticks": 96,
-    "llm": 239,
+    "llm": 240,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
