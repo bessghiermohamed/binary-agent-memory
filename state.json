@@ -12,10 +12,10 @@
     "startedAt": 1789981212162
   },
   "lastAction": {
-    "tool": "web_search",
-    "summary": "web_search: {\"ok\":true,\"backend\":\"wikipedia-ar\",\"query\":\"الفرق الزمني بين الجزائر وتوقيت صاحب الهدف\",\"results\":[{\"title\":\"سوق أهراس\",\"url\":\"https://ar.wikipedia.org/wiki/%D",
+    "tool": "schedule_task",
+    "summary": "scheduled",
     "ok": true,
-    "ts": 1789998585453
+    "ts": 1789998598703
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
@@ -41,16 +41,23 @@
       "dueAt": 1790070184621,
       "createdAt": 1789983844621,
       "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_11gi5y",
+      "what": "تنبيه الساعة 7:40",
+      "dueAt": 1790062800000,
+      "createdAt": 1789998597653,
+      "goalId": "g_73bhc2"
     }
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 169,
-    "ticks": 54
+    "llm": 170,
+    "ticks": 55
   },
   "totals": {
-    "ticks": 92,
-    "llm": 216,
+    "ticks": 93,
+    "llm": 217,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
