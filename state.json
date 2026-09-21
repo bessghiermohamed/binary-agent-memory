@@ -1,0 +1,72 @@
+{
+  "lock": null,
+  "paused": false,
+  "ownerChatId": "6169851983",
+  "ownerName": "Reverend insanity",
+  "currentTask": {
+    "goalId": "g_73bhc2",
+    "note": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
+    "startedAt": 1789981212162
+  },
+  "lastAction": {
+    "tool": "schedule_task",
+    "summary": "scheduled",
+    "ok": true,
+    "ts": 1789983975515
+  },
+  "lastInitiativeAt": 1789932511919,
+  "nextWakeAt": 0,
+  "chainCount": 0,
+  "scheduled": [
+    {
+      "id": "t_dxtn5s",
+      "what": "تنبيه الساعة 7:40",
+      "dueAt": 1789993118586,
+      "createdAt": 1789980218586,
+      "goalId": "g_6avqfa"
+    },
+    {
+      "id": "t_f1vlta",
+      "what": "إرسال تذكير الساعة 7:46 بتوقيت الجزائر",
+      "dueAt": 1790069775006,
+      "createdAt": 1789983435006,
+      "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_m3gwgg",
+      "what": "إرسال تذكير الساعة 7:46 بتوقيت الجزائر",
+      "dueAt": 1790095560000,
+      "createdAt": 1789983636168,
+      "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_wx39il",
+      "what": "تنبيه الساعة 7:40",
+      "dueAt": 1790070184621,
+      "createdAt": 1789983844621,
+      "goalId": "g_73bhc2"
+    },
+    {
+      "id": "t_ghqnoy",
+      "what": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر",
+      "dueAt": 1789987574604,
+      "createdAt": 1789983974604,
+      "goalId": "g_73bhc2"
+    }
+  ],
+  "counters": {
+    "day": "2026-09-21",
+    "llm": 107,
+    "ticks": 41
+  },
+  "totals": {
+    "ticks": 79,
+    "llm": 154,
+    "goalsDone": 5,
+    "startedAt": 1789924181663
+  },
+  "meta": {
+    "repo": "bessghiermohamed/agent-memory",
+    "built": "2026-09-21"
+  }
+}
