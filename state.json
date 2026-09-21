@@ -11,7 +11,7 @@
     "tool": "web_search",
     "summary": "• قانون المشروعات في المملكة المتحدة — https://ar.wikipedia.org/wiki/%D9%82%D8%A7%D9%86%D9%88%D9%86_%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D8%A7%D8%AA_%D9%81%D9%8A_%D8%A7%D9%84%D9%85%D9%85%D9%84%D",
     "ok": true,
-    "ts": 1790010742127
+    "ts": 1790019256226
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
@@ -21,12 +21,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-21",
-    "llm": 208,
-    "ticks": 60
+    "llm": 209,
+    "ticks": 61
   },
   "totals": {
-    "ticks": 98,
-    "llm": 255,
+    "ticks": 99,
+    "llm": 256,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -48,8 +48,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
-    "at": 1790010743353
+    "lastProvider": "cohere",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790019257345
   }
 }
