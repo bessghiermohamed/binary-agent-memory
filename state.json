@@ -1,5 +1,8 @@
 {
-  "lock": null,
+  "lock": {
+    "id": "496d3965",
+    "until": 1789993204041
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "ownerName": "Reverend insanity",
