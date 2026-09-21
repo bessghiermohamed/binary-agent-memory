@@ -92,41 +92,6 @@
       "result": "تم تحديد التوقيت المحلي لتيارت (UTC+1) واستُبدل التذكير لاحقاً بالتوقيت الأحدث في الهدف #g_lo238s."
     },
     {
-      "id": "g_73bhc2",
-      "title": "تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب",
-      "description": "1. تعديل الهدف (#g_6avqfa) ليشمل توقيت الجزائر (UTC+1) والتذكير في تمام **7:46** مساءًا غدًا. 2. إضافة تنبيه عند اقتراب الساعة (7:40) لتجنب نسيان إرسال الرسالة. 3. التأكد من أن الرسالة ستوضع بشكل تلقائي في الوقت المحدد. 4. تسجيل التاريخ والتوقيت الجديد في سجل الأهداف. 5. التأكد من أن جميع الأهداف السابقة (#g_hf3659, #g_q9txmr) تتوافق مع التغييرات.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789973251111,
-      "updatedAt": 1789997869775,
-      "notes": [
-        "merged duplicate g_65kjiz during v3 hygiene"
-      ]
-    },
-    {
-      "id": "g_ar4hgd",
-      "title": "إرسال تذكير الساعة 8:00 بتوقيت تيارت اليوم + تنبيه اقتراب",
-      "description": "1. إرسال الرسالة «انظر سوق» في تمام الساعة 8:00 بتوقيت تيارت (UTC+1) اليوم، 21 سبتمبر 2026. 2. إضافة تنبيه عند الساعة 7:55 لتجنب نسيان إرسال الرسالة تلقائيًا. 3. التأكد من توافق الأهداف السابقة (#g_hf3659, #g_q9txmr) مع هذا الوقت. 4. تسجيل التاريخ والتوقيت في سجل الأهداف وتوثيق التغيير.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789974182171,
-      "updatedAt": 1789974182171,
-      "notes": []
-    },
-    {
-      "id": "g_lo238s",
-      "title": "تعديل تذكير الساعة 8:05 بتوقيت تيارت (الجزائر) + تنبيه اقتراب",
-      "description": "1. تعديل الهدف (#g_ar4hgd) ليشمل إرسال الرسالة «انظر سوق» في تمام **8:05 مساءً** بتوقيت تيارت (UTC+1) اليوم، 21 سبتمبر 2026. 2. إضافة تنبيه عند الساعة 8:00 لتجنب نسيان إرسال الرسالة تلقائيًا. 3. التأكد من توافق جميع الأهداف السابقة (#g_hf3659, #g_q9txmr, #g_73bhc2) مع هذا الوقت الجديد. 4. تسجيل التاريخ والتوقيت الجديد في سجل الأهداف وتوثيق التغيير.",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789974379245,
-      "updatedAt": 1789974379245,
-      "notes": []
-    },
-    {
       "id": "g_sk0u4s",
       "title": "اختبار بسيط - اذكر لي اسم العاصمة الجزائرية",
       "description": "",
@@ -163,17 +128,6 @@
       "notes": []
     },
     {
-      "id": "g_o8355o",
-      "title": "تحسين قدراتي في استقبال الأهداف الجديدة",
-      "description": "تحسين قدراتي في استقبال الأهداف الجديدة وتحقيقها بفعالية، بالإضافة إلى تعزيز مهاراتي في التعلم المستمر والتحسين الذاتي",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789991344374,
-      "updatedAt": 1789991344374,
-      "notes": []
-    },
-    {
       "id": "g_faowst",
       "title": "تطوير الذات",
       "description": "هدف تطوير الذات اين وصلت",
@@ -183,26 +137,10 @@
       "createdAt": 1789993546597,
       "updatedAt": 1789993546597,
       "notes": []
-    },
-    {
-      "id": "g_9cu3n7",
-      "title": "بحث عن نكتة",
-      "description": "بحث عن نكتة جديدة",
-      "status": "active",
-      "subtasks": [],
-      "origin": "owner:Reverend insanity",
-      "createdAt": 1789997841080,
-      "updatedAt": 1789997841080,
-      "notes": [
-        "merged duplicate g_hktnph during v3 hygiene",
-        "merged duplicate g_et41xl during v3 hygiene",
-        "merged duplicate g_8l2ees during v3 hygiene",
-        "merged duplicate g_9ot6hm during v3 hygiene",
-        "merged duplicate g_krsegf during v3 hygiene"
-      ]
     }
   ],
   "_hygiene": [
-    "hygiene 2026-09-21 14:19 UTC: removed 10 contaminated goals"
+    "hygiene 2026-09-21 14:19 UTC: removed 10 contaminated goals",
+    "v4 hygiene 2026-09-21 17:03 UTC: removed 5 loop-fuel goals (g_73bhc2: «تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقت»; g_ar4hgd: «إرسال تذكير الساعة 8:00 بتوقيت تيارت اليوم + تنبيه»; g_lo238s: «تعديل تذكير الساعة 8:05 بتوقيت تيارت (الجزائر) + ت»; g_o8355o: «تحسين قدراتي في استقبال الأهداف الجديدة»; g_9cu3n7: «بحث عن نكتة»)"
   ]
 }
