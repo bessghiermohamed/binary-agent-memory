@@ -12,10 +12,10 @@
     "startedAt": 1789981212162
   },
   "lastAction": {
-    "tool": "send_message",
-    "summary": "send_message: {\"ok\":true}",
-    "ok": true,
-    "ts": 1789989902519
+    "tool": "update_goal",
+    "summary": "update_goal: no goal #g_6avqfa",
+    "ok": false,
+    "ts": 1789989980734
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
@@ -52,12 +52,12 @@
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 110,
-    "ticks": 42
+    "llm": 111,
+    "ticks": 43
   },
   "totals": {
-    "ticks": 80,
-    "llm": 157,
+    "ticks": 81,
+    "llm": 158,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
