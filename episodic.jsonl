@@ -249,3 +249,4 @@
 {"ts":1790009528010,"text":"[16:52:08] task: لا يوجد وقت مناسب الآن لتنفيذ مهمة فورية، لذا اختر أداة مناسبة لتحسين مهمة تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبي → update_goal: update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)","mode":"task","tool":"update_goal","ok":false,"goalId":"g_73bhc2"}
 {"ts":1790010093120,"text":"error: decision parse failed (mode=scheduled) — المزودات لم ترد","ok":false}
 {"ts":1790010124053,"text":"[17:02:04] scheduled: تعديل تذكير الساعة 7:46 بتوقيت الجزائر يتطلب تحديث هدف مجدول سابق (t_yyf3iad) بدلاً من إنشاء جديد، لذا يجب إلغاء المجدول → update_goal: update_goal: لا مهمة فرعية رقم 0 (الموجود: 0..-1)","mode":"scheduled","tool":"update_goal","ok":false,"goalId":"g_73bhc2"}
+{"ts":1790010125463,"text":"scheduled-fired: تعديل تذكير الساعة 7:46 بتوقيت الجزائر + تنبيه اقتراب","ok":true}
