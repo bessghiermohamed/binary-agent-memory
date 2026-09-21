@@ -12,10 +12,10 @@
     "startedAt": 1789981212162
   },
   "lastAction": {
-    "tool": "web_search",
-    "summary": "web_search: {\"ok\":true,\"backend\":\"wikipedia-ar\",\"query\":\"الوقت الحالي في الجزائر اليوم\",\"results\":[{\"title\":\"لعبة جهنم (مسلسل)\",\"url\":\"https://ar.wikipedia.org/wiki/%D9%84%",
-    "ok": true,
-    "ts": 1789993468118
+    "tool": "update_goal",
+    "summary": "update_goal: no goal #g_73bhc2",
+    "ok": false,
+    "ts": 1789993479751
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
@@ -45,12 +45,12 @@
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 144,
-    "ticks": 47
+    "llm": 145,
+    "ticks": 48
   },
   "totals": {
-    "ticks": 85,
-    "llm": 191,
+    "ticks": 86,
+    "llm": 192,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
