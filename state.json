@@ -13,9 +13,9 @@
   },
   "lastAction": {
     "tool": "update_goal",
-    "summary": "goal #g_73bhc2 -> active",
-    "ok": true,
-    "ts": 1789997871417
+    "summary": "update_goal: no goal #g_73bhc2",
+    "ok": false,
+    "ts": 1789997885696
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
@@ -45,12 +45,12 @@
   ],
   "counters": {
     "day": "2026-09-21",
-    "llm": 165,
-    "ticks": 51
+    "llm": 166,
+    "ticks": 52
   },
   "totals": {
-    "ticks": 89,
-    "llm": 212,
+    "ticks": 90,
+    "llm": 213,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
