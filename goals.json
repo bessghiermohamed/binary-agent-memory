@@ -225,6 +225,17 @@
       "createdAt": 1789993456289,
       "updatedAt": 1789993456289,
       "notes": []
+    },
+    {
+      "id": "g_faowst",
+      "title": "تطوير الذات",
+      "description": "هدف تطوير الذات اين وصلت",
+      "status": "active",
+      "subtasks": [],
+      "origin": "owner:Reverend insanity",
+      "createdAt": 1789993546597,
+      "updatedAt": 1789993546597,
+      "notes": []
     }
   ]
 }
