@@ -13,13 +13,13 @@
   },
   "lastAction": {
     "tool": "update_goal",
-    "summary": "update_goal: no goal #g_73bhc2",
-    "ok": false,
-    "ts": 1789993558238
+    "summary": "goal #g_73bhc2 -> active",
+    "ok": true,
+    "ts": 1789997855246
   },
   "lastInitiativeAt": 1789932511919,
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [
     {
       "id": "t_f1vlta",
@@ -46,10 +46,10 @@
   "counters": {
     "day": "2026-09-21",
     "llm": 163,
-    "ticks": 49
+    "ticks": 50
   },
   "totals": {
-    "ticks": 87,
+    "ticks": 88,
     "llm": 210,
     "goalsDone": 5,
     "startedAt": 1789924181663
