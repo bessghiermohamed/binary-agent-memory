@@ -11,7 +11,7 @@
     "tool": "web_search",
     "summary": "web_search: تعذّر البحث (كل المصادر محجوبة) — جرّب صياغة أخرى",
     "ok": false,
-    "ts": 1790030815768
+    "ts": 1790039629451
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790009517804,
@@ -20,13 +20,13 @@
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "day": "2026-09-21",
-    "llm": 219,
-    "ticks": 62
+    "day": "2026-09-22",
+    "llm": 1,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 100,
-    "llm": 266,
+    "ticks": 101,
+    "llm": 267,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -38,6 +38,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -48,7 +49,7 @@
       "huggingface"
     ],
     "lastProvider": "cloudflare",
-    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | grok: HTTP 403",
-    "at": 1790030817705
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790039630608
   }
 }
