@@ -8,27 +8,25 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "web_search",
-    "summary": "• إسرائيل — https://ar.wikipedia.org/wiki/%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84 — تقيم معها علاقات دبلوماسية بصورة عامة أو جزئية: 17 من أعضاء الأمم المتحدة الـ20 في جامعة الدول العربية : الجزائر ",
+    "tool": "none",
+    "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1790104026037
+    "ts": 1790114467233
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790104027082,
-  "chainDispatchLog": [
-    1790104027082
-  ],
+  "chainDispatchLog": [],
   "nextWakeAt": 0,
   "chainCount": 0,
   "scheduled": [],
   "counters": {
     "day": "2026-09-22",
-    "llm": 10,
-    "ticks": 7
+    "llm": 11,
+    "ticks": 8
   },
   "totals": {
-    "ticks": 107,
-    "llm": 276,
+    "ticks": 108,
+    "llm": 277,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -49,8 +47,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790104027082
+    "lastProvider": "groq",
+    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | grok: HTTP 403",
+    "at": 1790114469488
   }
 }
