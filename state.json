@@ -9,26 +9,26 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
+    "summary": "• النقل بالسكك الحديدية في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D8%B3%D9%83%D9%83_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF%D9%8A%D8%A9_%D9%81%D9%8A_%D8",
     "ok": true,
-    "ts": 1790076950932
+    "ts": 1790091555786
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790076940124,
+  "lastChainDispatchAt": 1790091556805,
   "chainDispatchLog": [
-    1790076940124
+    1790091556805
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
     "day": "2026-09-22",
-    "llm": 6,
-    "ticks": 4
+    "llm": 7,
+    "ticks": 5
   },
   "totals": {
-    "ticks": 104,
-    "llm": 272,
+    "ticks": 105,
+    "llm": 273,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,6 +40,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -51,6 +52,6 @@
     ],
     "lastProvider": "mistral",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790076951979
+    "at": 1790091556805
   }
 }
