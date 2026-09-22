@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mud1q2ag-zn37",
+    "at": 1790104036348,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": {
@@ -19,16 +23,16 @@
     1790104027082
   ],
   "nextWakeAt": 0,
-  "chainCount": 3,
+  "chainCount": 0,
   "scheduled": [],
   "counters": {
     "day": "2026-09-22",
-    "llm": 9,
+    "llm": 10,
     "ticks": 7
   },
   "totals": {
     "ticks": 107,
-    "llm": 275,
+    "llm": 276,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
