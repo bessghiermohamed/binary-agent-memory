@@ -9,9 +9,9 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• النقل بالسكك الحديدية في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%86%D9%82%D9%84_%D8%A8%D8%A7%D9%84%D8%B3%D9%83%D9%83_%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D8%AF%D9%8A%D8%A9_%D9%81%D9%8A_%D8",
-    "ok": true,
-    "ts": 1790091555786
+    "summary": "web_search: تعذّر البحث (كل المصادر محجوبة) — جرّب صياغة أخرى",
+    "ok": false,
+    "ts": 1790091571954
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790091556805,
@@ -23,12 +23,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-22",
-    "llm": 7,
-    "ticks": 5
+    "llm": 8,
+    "ticks": 6
   },
   "totals": {
-    "ticks": 105,
-    "llm": 273,
+    "ticks": 106,
+    "llm": 274,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,18 +40,16 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
-      "pollinations",
       "huggingface-qwen",
       "grok",
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790091556805
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790091573036
   }
 }
