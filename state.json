@@ -8,27 +8,27 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "web_search",
-    "summary": "• غزو العراق — https://ar.wikipedia.org/wiki/%D8%BA%D8%B2%D9%88_%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82 — وهي مجموعة تعتمد على التقارير الصحفية والتقارير المستندة إلى المنظمات غير الحكومية والأرقام الرسم",
+    "tool": "web_fetch",
+    "summary": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
     "ok": true,
-    "ts": 1790199445690
+    "ts": 1790207738827
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790199435487,
+  "lastChainDispatchAt": 1790207740004,
   "chainDispatchLog": [
-    1790199435487
+    1790207740004
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
-    "day": "2026-09-23",
-    "llm": 15,
-    "ticks": 7
+    "day": "2026-09-24",
+    "llm": 1,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 115,
-    "llm": 292,
+    "ticks": 116,
+    "llm": 293,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,6 +40,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -49,8 +50,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
+    "lastProvider": "mistral",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790199446912
+    "at": 1790207740004
   }
 }
