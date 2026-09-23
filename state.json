@@ -9,9 +9,9 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
+    "summary": "• غزو العراق — https://ar.wikipedia.org/wiki/%D8%BA%D8%B2%D9%88_%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82 — وهي مجموعة تعتمد على التقارير الصحفية والتقارير المستندة إلى المنظمات غير الحكومية والأرقام الرسم",
     "ok": true,
-    "ts": 1790199434179
+    "ts": 1790199445690
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790199435487,
@@ -23,12 +23,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-23",
-    "llm": 14,
-    "ticks": 6
+    "llm": 15,
+    "ticks": 7
   },
   "totals": {
-    "ticks": 114,
-    "llm": 291,
+    "ticks": 115,
+    "llm": 292,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,7 +40,6 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -50,8 +49,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 4",
-    "at": 1790199435487
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790199446912
   }
 }
