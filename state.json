@@ -8,25 +8,27 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "none",
-    "summary": "لا إجراء (none)",
+    "tool": "web_search",
+    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
     "ok": true,
-    "ts": 1790187974792
+    "ts": 1790199434179
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790104027082,
-  "chainDispatchLog": [],
+  "lastChainDispatchAt": 1790199435487,
+  "chainDispatchLog": [
+    1790199435487
+  ],
   "nextWakeAt": 0,
-  "chainCount": 0,
+  "chainCount": 1,
   "scheduled": [],
   "counters": {
     "day": "2026-09-23",
-    "llm": 13,
-    "ticks": 5
+    "llm": 14,
+    "ticks": 6
   },
   "totals": {
-    "ticks": 113,
-    "llm": 290,
+    "ticks": 114,
+    "llm": 291,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -38,6 +40,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -48,7 +51,7 @@
       "huggingface"
     ],
     "lastProvider": "mistral",
-    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | grok: HTTP 403",
-    "at": 1790187976037
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 4",
+    "at": 1790199435487
   }
 }
