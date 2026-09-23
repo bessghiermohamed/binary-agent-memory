@@ -8,10 +8,10 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "none",
-    "summary": "لا إجراء (none)",
-    "ok": true,
-    "ts": 1790122205819
+    "tool": "web_search",
+    "summary": "web_search: تعذّر البحث (كل المصادر محجوبة) — جرّب صياغة أخرى",
+    "ok": false,
+    "ts": 1790138404612
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790104027082,
@@ -21,12 +21,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-23",
-    "llm": 1,
-    "ticks": 1
+    "llm": 2,
+    "ticks": 2
   },
   "totals": {
-    "ticks": 109,
-    "llm": 278,
+    "ticks": 110,
+    "llm": 279,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -38,6 +38,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -47,8 +48,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "groq",
-    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | grok: HTTP 403",
-    "at": 1790122207046
+    "lastProvider": "mistral",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790138405797
   }
 }
