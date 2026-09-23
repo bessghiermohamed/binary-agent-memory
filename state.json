@@ -8,10 +8,10 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "web_fetch",
-    "summary": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta nam",
+    "tool": "web_search",
+    "summary": "• الفساد في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B3%D8%A7%D8%AF_%D9%81%D9%8A_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1 — تراجعت الجزائر مقارنة ببعض دول المغرب العربي مثل تونس",
     "ok": true,
-    "ts": 1790207738827
+    "ts": 1790207750654
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790207740004,
@@ -23,12 +23,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 1,
-    "ticks": 1
+    "llm": 2,
+    "ticks": 2
   },
   "totals": {
-    "ticks": 116,
-    "llm": 293,
+    "ticks": 117,
+    "llm": 294,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,7 +40,6 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -50,8 +49,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
+    "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790207740004
+    "at": 1790207751695
   }
 }
