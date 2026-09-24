@@ -3,21 +3,26 @@
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
-  "lastAction": null,
-  "lastInitiativeAt": 0,
+  "lastAction": {
+    "tool": "web_search",
+    "summary": "web_search: تعذّر البحث (كل المصادر محجوبة) — جرّب صياغة أخرى",
+    "ok": false,
+    "ts": 1790292457674
+  },
+  "lastInitiativeAt": 1790292457674,
   "lastChainDispatchAt": 0,
   "chainDispatchLog": [],
   "nextWakeAt": 0,
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "episodes": 606,
-    "insights": 8,
-    "llm": 4
+    "day": "2026-09-25",
+    "llm": 1,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 0,
-    "llm": 5,
+    "ticks": 1,
+    "llm": 6,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -139,5 +144,22 @@
       "MISTRAL_API_KEY"
     ],
     "enabled": true
+  },
+  "llmSnapshot": {
+    "ready": [
+      "gemini",
+      "openrouter",
+      "cohere",
+      "mistral",
+      "cloudflare",
+      "pollinations",
+      "huggingface-qwen",
+      "grok",
+      "groq",
+      "huggingface"
+    ],
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790292458713
   }
 }
