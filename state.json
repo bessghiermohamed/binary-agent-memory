@@ -13,11 +13,11 @@
   "counters": {
     "episodes": 287,
     "insights": 5,
-    "llm": 1
+    "llm": 2
   },
   "totals": {
     "ticks": 0,
-    "llm": 2,
+    "llm": 3,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
