@@ -1,4 +1,26 @@
 {
+  "lock": null,
+  "paused": false,
+  "ownerChatId": "6169851983",
+  "currentTask": null,
+  "lastAction": null,
+  "lastInitiativeAt": 0,
+  "lastChainDispatchAt": 0,
+  "chainDispatchLog": [],
+  "nextWakeAt": 0,
+  "chainCount": 0,
+  "scheduled": [],
+  "counters": {
+    "episodes": 287,
+    "insights": 5,
+    "llm": null
+  },
+  "totals": {
+    "ticks": 0,
+    "llm": 1,
+    "goalsDone": 0,
+    "startedAt": 1790283980581
+  },
   "name": "بيناري",
   "version": 2,
   "owner": {
@@ -18,10 +40,6 @@
   },
   "timezone": "Africa/Algiers",
   "locks": {},
-  "counters": {
-    "episodes": 287,
-    "insights": 5
-  },
   "budgets": {
     "max_tool_calls_per_goal": 12,
     "max_paid_api_calls_per_day": 0,
