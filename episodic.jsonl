@@ -588,3 +588,69 @@
 {"ts": "2026-09-24T22:31:53+01:00", "type": "event", "actor": "بيناري", "summary": "ربطتُ web.py بالعقل الجديد: الأوامر المحلية (حالة/ملخص/موافقات/هدف) تنفَّذ مباشرة، والحديث الحر يمر على المزوّد، ومصدر كل رد يُذكر صريحًا، وفشل الكل يُعلن بلا كذب.", "evidence": ["web.py"]}
 {"ts": "2026-09-24T22:31:53+01:00", "type": "lesson", "actor": "بيناري", "lesson": "الذكاء المستعار ليس عيبًا إن صُرّح بمصدره؛ العيب هو ادعاء الفهم. كل ردي الآن يحمل اسم مزوّده، وفشله يُعلن.", "tags": ["صدق", "مزوّدات"], "source": "g004"}
 {"ts": "2026-09-24T22:31:53+01:00", "type": "lesson", "actor": "بيناري", "lesson": "مفتاح Groq أو OpenRouter المجاني في البيئة يرفع جودة عقلي وسرعته؛ البقاء على مزوّدات g4f المجهولة خيار احتياط لا أولًا.", "tags": ["مقتصدية", "احتياط"], "source": "brain.py"}
+{"ts": "2026-09-24T22:34:06+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:34:15+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T22:34:15+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: من أنت؟ عرّف بنفسك في جملتين.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:34:24+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T22:34:24+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ما الفرق بين الحاسوب والدماغ البشري؟ briefly بالعربية.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:34:31+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T22:34:31+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: وماذا قلت لي في سؤالي الأول؟", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:35:11+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:35:14+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T22:35:14+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اكتب بيت شعر قصير عن الصدق.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T22:35:20+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:27+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:29+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:29+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:30+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:31+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:32+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:32+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:33+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:34+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:34+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:34+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:35+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:36+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:36+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:37+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:38+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:38+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:39+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:39+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:11:40+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:40+01:00", "kind": "llm_error", "summary": "فشل العقل اللغوي: كل المزوّدات فشلت: g4f keyless providers failed: LLM7: RateLimitError | PollinationsAI: PaymentRequiredError"}
+{"ts": "2026-09-24T23:11:41+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:11:41+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اختبار", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:14:50+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "مدينة تيارت الجزائر"}}
+{"ts": "2026-09-24T23:14:52+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-24T23:14:52+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث في الويب عن مدينة تيارت واذكر معلومة واحدة حقيقية عنها ", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:15:18+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:15:18+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ما أهدافك الحالية؟", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:17:07+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:17:11+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:17:11+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ما أهدافك المفتوحة حاليًا؟ اذكرها بالمعرّفات.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:17:44+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:17:44+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: اذهب إلى أهدافك ثم عدّدها لي بالمعرّف والحالة.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:17:48+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-24T23:17:48+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث في الويب: ما هو وكيل ذكاء اصطناعي؟", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:22:59+01:00", "kind": "agent_tool", "summary": "استعمل GOALS من تلقاء نفسه", "details": {"tool": "GOALS", "arg": ""}}
+{"ts": "2026-09-24T23:23:42+01:00", "kind": "agent_tool", "summary": "استعمل GOALS من تلقاء نفسه", "details": {"tool": "GOALS", "arg": ""}}
+{"ts": "2026-09-24T23:24:29+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:24:32+01:00", "kind": "agent_tool", "summary": "استعمل GOALS من تلقاء نفسه", "details": {"tool": "GOALS", "arg": ""}}
+{"ts": "2026-09-24T23:24:33+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+GOALS", "details": {"source": "g4f:LLM7+GOALS"}}
+{"ts": "2026-09-24T23:24:33+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: استعمل أداتك [[GOALS]] ثم اذكر أهدافك المفتوحة.", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:26:27+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:26:27+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:28:18+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:28:20+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:28:20+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:28:20+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: هدف: اختبار آلي عابر", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:30:34+01:00", "type": "event", "actor": "بيناري", "summary": "ترقية كبرى (10×): أدوات حرة بلا مفاتيح — بحث ويب (ويكيبيديا+DDG) وجلب صفحات عبر tools_search، أداة [[SEARCH]] و[[URL]] و[[MEMORY]] و[[GOALS]] و[[INSIGHT]] يستعملها العقل بنفسه مع حلقة إكمال واحدة.", "evidence": ["tools_search.py", "brain.py"]}
+{"ts": "2026-09-24T23:30:34+01:00", "type": "event", "actor": "بيناري", "summary": "خادم أقوى: /api/health، CORS للصفحة المنشورة، حد معدل (15 رسالة/دقيقة، 429 عند التجاوز)، وتعلّم ذاتي دوري يستخلص درسًا من خبراته الأخيرة.", "evidence": ["web.py"]}
+{"ts": "2026-09-24T23:30:34+01:00", "type": "event", "actor": "بيناري", "summary": "واجهة جديدة كليًا: Markdown (عناوين، قوائم، كود، روابط)، مؤشر كتابة، نسخ وإعادة محاولة، ثيم ليلي/نهاري، بطاقات أهداف وموافقات وذاكرة. واختبرتُ كل شيء: 12/12 اختبار دخان.", "evidence": ["web/index.html", "docs/index.html", "test_web.py"]}
+{"ts": "2026-09-24T23:30:34+01:00", "type": "event", "actor": "بيناري", "summary": "أخطاء صادقة أثناء الترقية: نمط [[GOALS]] بلا نقطتين لم يُكتشف فأصلحته، وثاني محاولة للرد قد تفشل فأدمجتُ نتيجة الأداة بصدق، وadd_goal لا يقبل origin فنظّفت النداء. كلها موثّقة ومُختبَرة.", "evidence": ["brain.py", "web.py"]}
+{"ts": "2026-09-24T23:30:34+01:00", "type": "lesson", "actor": "بيناري", "lesson": "الأداة الحقيقية تتطلب تحملًا لأخطاء النمط: النماذج اللغوية تكتب [[GOALS]] أو [[GOALS: ]] — عرّف كليهما، وادمج نتيجة الأداة بصدق إن فشل الرد الثاني.", "tags": ["أدوات", "مرونة"], "source": "g006"}
+{"ts": "2026-09-24T23:32:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:32:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-24T23:32:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: هدف: اختبار آلي عابر", "details": {"channel": "web"}}

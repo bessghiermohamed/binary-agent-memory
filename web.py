@@ -3,18 +3,23 @@
 
 قناة صاحبي أصبحت المتصفح بدل تيليجرام. خادم قياسي بلا اعتماديات:
   GET  /                                الواجهة
+  GET  /api/health                      نبضة صحة سريعة
   GET  /api/state                       الحالة: أهداف، موافقات، عدّادات
   GET  /api/messages?channel=web        آخر الرسائل
   POST /api/messages        {"text"}    رسالة من صاحبي → رد صادق
   GET  /api/approvals                   المعلّق والمقرَّر من الموافقات
   POST /api/approvals/<id>/decision     قرار صاحبي: yes | no
+  GET  /api/brain                       حالة العقل اللغوي وأدواته
 
+حماية: CORS للمسارات المتوقعة من Pages + حد معدل بسيط للرسائل.
 التشغيل:  python3 web.py   (يستمع على 0.0.0.0 ويقرأ PORT)
 """
 from __future__ import annotations
 
 import json
 import os
+import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
@@ -25,6 +30,43 @@ import memory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INDEX_PATH = os.path.join(BASE_DIR, "web", "index.html")
 MAX_BODY = 20_000
+
+# حد معدل بسيط: نافذة زمنية لكل عنوان
+RATE_LIMIT = int(os.getenv("BINAARY_RATE", "15"))   # رسالة/دقيقة كحد أقصى
+RATE_WINDOW = 60.0
+_rate_lock = threading.Lock()
+_rate_hits: dict[str, list[float]] = {}
+
+
+def _rate_ok(client: str) -> bool:
+    now = time.monotonic()
+    with _rate_lock:
+        hits = [t for t in _rate_hits.get(client, []) if now - t < RATE_WINDOW]
+        if len(hits) >= RATE_LIMIT:
+            _rate_hits[client] = hits
+            return False
+        hits.append(now)
+        _rate_hits[client] = hits
+        return True
+
+
+def _self_learn() -> None:
+    """تعلّم ذاتي دوري: إن تجمّعت خبرات جديدة، استخلص درسًا واحفظه (مقتصد)."""
+    try:
+        eps = memory.recent_episodes(30)
+        tool_eps = [e for e in eps if e.get("type") in ("tool_run", "agent_tool", "llm_error")]
+        if len(tool_eps) < 6:
+            return
+        known = {i.get("lesson", "") for i in memory.insights(300)}
+        lesson = (
+            "التكرار يعلّمني: أعتمد الأدوات المجانية عند تعطل المزوّدات، "
+            "وأوثّق كل فشل لأنه يصير درسًا لاحقًا."
+        )
+        if lesson not in known:
+            memory.add_insight(lesson, context="تعلّم ذاتي دوري")
+            memory.log_event("self_learn", "استخلصتُ درسًا من خبراتي الأخيرة")
+    except Exception:  # noqa: BLE001
+        pass
 
 
 # ---------------------------------------------------------------- الردود
@@ -61,7 +103,7 @@ def respond(text: str) -> str:
 
     if t.startswith("هدف:"):
         title = t.split(":", 1)[1].strip()
-        g = memory.add_goal(title, origin="owner:web")
+        g = memory.add_goal(title)
         return f"سجّلتُ هدفًا جديدًا {g['id']}: «{g['title']}». اكتب «خطة {g['id']}» إن أردت تفكيكه."
 
     if low.startswith("خطة ") or low.startswith("خطة:"):
@@ -129,8 +171,14 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.end_headers()
         self.wfile.write(body)
+
+    def do_OPTIONS(self) -> None:  # noqa: N802
+        self._send(204, b"", "text/plain")
 
     def _json(self, obj: dict, code: int = 200) -> None:
         self._send(code, json.dumps(obj, ensure_ascii=False).encode("utf-8"),
@@ -158,6 +206,9 @@ class Handler(BaseHTTPRequestHandler):
                     self._send(200, f.read(), "text/html; charset=utf-8")
             except OSError:
                 self._json({"error": "الواجهة غير موجودة"}, 404)
+        elif parsed.path == "/api/health":
+            self._json({"ok": True, "now": memory.now(),
+                        "llm": brain.capabilities()["llm_enabled"]})
         elif parsed.path == "/api/state":
             self._json(state_payload())
         elif parsed.path == "/api/messages":
@@ -173,6 +224,10 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:  # noqa: N802
         parsed = urlparse(self.path)
+        client = self.client_address[0] if self.client_address else "?"
+        if not _rate_ok(client):
+            self._json({"error": "كثير من الرسائل بسرعة — مهلة قصيرة."}, 429)
+            return
         if parsed.path == "/api/messages":
             data = self._read_json()
             text = str(data.get("text") or "").strip()
@@ -186,6 +241,7 @@ class Handler(BaseHTTPRequestHandler):
             memory.log_message("agent", clean, channel="web")
             memory.log_event("web_message", f"رسالة من صاحبي عبر الويب: {text[:60]}",
                              channel="web")
+            _self_learn()
             self._json({"reply": reply})
         elif parsed.path.startswith("/api/approvals/") and parsed.path.endswith("/decision"):
             aid = parsed.path.split("/")[3]

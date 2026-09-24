@@ -11,8 +11,8 @@
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "episodes": 587,
-    "insights": 7,
+    "episodes": 606,
+    "insights": 8,
     "llm": 4
   },
   "totals": {
@@ -36,7 +36,19 @@
     "engine": "codebuff",
     "mind_repo": "https://github.com/murad/buildar-agent",
     "first_boot_at": "2026-09-24T20:50:08Z",
-    "last_heartbeat_at": "2026-09-24T22:31:53+01:00"
+    "last_heartbeat_at": "2026-09-24T23:30:34+01:00",
+    "capabilities": [
+      "web_chat",
+      "llm_free_providers",
+      "web_search",
+      "url_fetch",
+      "memory_recall",
+      "self_insight",
+      "approval_gate",
+      "rate_limit",
+      "cors",
+      "self_learn"
+    ]
   },
   "channel": {
     "current": "web",
