@@ -9,9 +9,9 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
+    "summary": "• اقتصاد الأردن — https://ar.wikipedia.org/wiki/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86 — لكل دولة\". The Guardian. مؤرشف من الأصل في 2013-08-01. اطلع عليه بتاريخ 2011",
     "ok": true,
-    "ts": 1790271301906
+    "ts": 1790271315510
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790271303172,
@@ -23,12 +23,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 8,
-    "ticks": 8
+    "llm": 9,
+    "ticks": 9
   },
   "totals": {
-    "ticks": 123,
-    "llm": 300,
+    "ticks": 124,
+    "llm": 301,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,7 +40,6 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -50,8 +49,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
+    "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790271303172
+    "at": 1790271316684
   }
 }
