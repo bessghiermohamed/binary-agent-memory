@@ -9,26 +9,26 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• اقتصاد الأردن — https://ar.wikipedia.org/wiki/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86 — لكل دولة\". The Guardian. مؤرشف من الأصل في 2013-08-01. اطلع عليه بتاريخ 2011",
+    "summary": "• الفساد في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B3%D8%A7%D8%AF_%D9%81%D9%8A_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1 — المجتمعية للإسلاميين مقابل الدعم الانتخابي، حيث يتم ش",
     "ok": true,
-    "ts": 1790271315510
+    "ts": 1790282581947
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790271303172,
+  "lastChainDispatchAt": 1790282584304,
   "chainDispatchLog": [
-    1790271303172
+    1790282584304
   ],
   "nextWakeAt": 0,
-  "chainCount": 2,
+  "chainCount": 3,
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 9,
-    "ticks": 9
+    "llm": 10,
+    "ticks": 10
   },
   "totals": {
-    "ticks": 124,
-    "llm": 301,
+    "ticks": 125,
+    "llm": 302,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -50,7 +50,7 @@
       "huggingface"
     ],
     "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790271316684
+    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 429 | huggingface-qwen: HTTP 402",
+    "at": 1790282584304
   }
 }
