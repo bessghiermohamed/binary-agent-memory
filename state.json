@@ -8,10 +8,10 @@
     "startedAt": 1790010739501
   },
   "lastAction": {
-    "tool": "web_search",
-    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
+    "tool": "none",
+    "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1790215573224
+    "ts": 1790215587086
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790215574303,
@@ -19,16 +19,16 @@
     1790215574303
   ],
   "nextWakeAt": 0,
-  "chainCount": 3,
+  "chainCount": 0,
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 3,
-    "ticks": 3
+    "llm": 4,
+    "ticks": 4
   },
   "totals": {
-    "ticks": 118,
-    "llm": 295,
+    "ticks": 119,
+    "llm": 296,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,18 +40,16 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
-      "pollinations",
       "huggingface-qwen",
       "grok",
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790215574303
+    "lastProvider": "huggingface",
+    "lastError": "HTTP 403 {\"code\":\"permission-denied\",\"error\":\"Your team aff5ac3b-afec-44f4-acc4-a2be0fce8a07 has either used all available credits or reache",
+    "at": 1790215588057
   }
 }
