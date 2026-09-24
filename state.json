@@ -1,56 +1,52 @@
 {
-  "lock": null,
-  "paused": false,
-  "ownerChatId": "6169851983",
-  "currentTask": {
-    "goalId": "g_2j9yae",
-    "note": "البحث عن طرق لتحقيق الاكتفاء المالي",
-    "startedAt": 1790010739501
+  "name": "بيناري",
+  "version": 2,
+  "owner": {
+    "telegram": "@MohamedBebot",
+    "label": "مراد",
+    "telegram_chat_id": 6169851983,
+    "city": "تيارت، الجزائر",
+    "timezone": "Africa/Algiers"
   },
-  "lastAction": {
-    "tool": "web_search",
-    "summary": "• اقتصاد الأردن — https://ar.wikipedia.org/wiki/%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF_%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86 — لكل دولة\". The Guardian. مؤرشف من الأصل في 2013-08-01. اطلع عليه بتاريخ 2011",
-    "ok": true,
-    "ts": 1790271315510
+  "language": "ar",
+  "created_at": "2026-09-24T20:50:08Z",
+  "runtime": {
+    "engine": "codebuff",
+    "mind_repo": "https://github.com/murad/buildar-agent",
+    "first_boot_at": "2026-09-24T20:50:08Z",
+    "last_heartbeat_at": "2026-09-24T20:50:08Z"
   },
-  "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790271303172,
-  "chainDispatchLog": [
-    1790271303172
-  ],
-  "nextWakeAt": 0,
-  "chainCount": 2,
-  "scheduled": [],
+  "timezone": "Africa/Algiers",
+  "locks": {},
   "counters": {
-    "day": "2026-09-24",
-    "llm": 9,
-    "ticks": 9
+    "episodes": 13,
+    "insights": 4
   },
-  "totals": {
-    "ticks": 124,
-    "llm": 301,
-    "goalsDone": 5,
-    "startedAt": 1789924181663
+  "budgets": {
+    "max_tool_calls_per_goal": 12,
+    "max_paid_api_calls_per_day": 0,
+    "llm_calls_per_day": 50,
+    "notes": "مقتصد: الأدوات المجانية أولًا، ولا نداء مدفوع دون إذن صريح من صاحبي."
   },
-  "ownerName": "Reverend insanity",
-  "meta": {
-    "repo": "bessghiermohamed/binary-agent-memory",
-    "built": "2026-09-21"
-  },
-  "llmSnapshot": {
-    "ready": [
-      "gemini",
-      "cohere",
-      "mistral",
-      "cloudflare",
-      "pollinations",
-      "huggingface-qwen",
-      "grok",
-      "groq",
-      "huggingface"
+  "safety": {
+    "require_owner_approval_for": [
+      "إرسال رسائل إلى أي شخص غير صاحبي",
+      "أي عمل يدفع مالًا أو يستهلك رصيدًا",
+      "نشر محتوى علنيًا باسم صاحبي",
+      "حذف أو تعديل بيانات لا أملكها"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790271316684
+    "autonomous_ok": [
+      "قراءة الملفات والبحث",
+      "كتابة وتعديل ملفات عقلي",
+      "تشغيل أوامر محلية آمنة للفحص"
+    ]
+  },
+  "memory_files": {
+    "identity": "identity.md",
+    "goals": "goals.json",
+    "episodic": "episodic.jsonl",
+    "insights": "insights.jsonl",
+    "approvals": "approvals.json",
+    "conversations": "conversations/"
   }
 }
