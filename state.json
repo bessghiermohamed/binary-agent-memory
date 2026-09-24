@@ -19,8 +19,8 @@
   "timezone": "Africa/Algiers",
   "locks": {},
   "counters": {
-    "episodes": 13,
-    "insights": 4
+    "episodes": 287,
+    "insights": 5
   },
   "budgets": {
     "max_tool_calls_per_goal": 12,
