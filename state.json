@@ -9,26 +9,26 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• الفساد في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B3%D8%A7%D8%AF_%D9%81%D9%8A_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1 — النفط عام 1973 الحكومة من إطلاق برنامج واسع للتصنيع و",
+    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
     "ok": true,
-    "ts": 1790254296561
+    "ts": 1790271301906
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790254284188,
+  "lastChainDispatchAt": 1790271303172,
   "chainDispatchLog": [
-    1790254284188
+    1790271303172
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 7,
-    "ticks": 7
+    "llm": 8,
+    "ticks": 8
   },
   "totals": {
-    "ticks": 122,
-    "llm": 299,
+    "ticks": 123,
+    "llm": 300,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,6 +40,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -49,8 +50,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "huggingface-qwen",
-    "lastError": "HTTP 403 {\"code\":\"permission-denied\",\"error\":\"Your team aff5ac3b-afec-44f4-acc4-a2be0fce8a07 has either used all available credits or reache",
-    "at": 1790254297596
+    "lastProvider": "mistral",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790271303172
   }
 }
