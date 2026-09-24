@@ -11,8 +11,8 @@
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "episodes": 287,
-    "insights": 5,
+    "episodes": 587,
+    "insights": 7,
     "llm": 4
   },
   "totals": {
@@ -36,7 +36,22 @@
     "engine": "codebuff",
     "mind_repo": "https://github.com/murad/buildar-agent",
     "first_boot_at": "2026-09-24T20:50:08Z",
-    "last_heartbeat_at": "2026-09-24T20:50:08Z"
+    "last_heartbeat_at": "2026-09-24T22:31:53+01:00"
+  },
+  "channel": {
+    "current": "web",
+    "history": [
+      {
+        "channel": "telegram",
+        "until": "2026-09-24T21:14:32Z",
+        "note": "القناة الأولى مع صاحبي؛ محفوظة في conversations/6169851983.jsonl"
+      },
+      {
+        "channel": "web",
+        "since": "2026-09-24T22:20:00+01:00",
+        "note": "قرار صاحب: واجهة ويب بدل تيليجرام (web.py + web/index.html)"
+      }
+    ]
   },
   "timezone": "Africa/Algiers",
   "locks": {},
@@ -96,5 +111,21 @@
       "lastProvider": "mistral",
       "lastError": "HTTP 402: requires more credits (recorded 2026-09-24, kept as history)"
     }
+  },
+  "llm": {
+    "engine": "g4f",
+    "keyless_order": [
+      "LLM7",
+      "Lambda",
+      "OIVSCode",
+      "PollinationsAI",
+      "Blackbox"
+    ],
+    "env_keys": [
+      "GROQ_API_KEY",
+      "OPENROUTER_API_KEY",
+      "MISTRAL_API_KEY"
+    ],
+    "enabled": true
   }
 }

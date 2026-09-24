@@ -1,0 +1,10 @@
+{
+  "name": "binaary-mind",
+  "version": "1.0.0",
+  "description": "بيناري — وكيل مستقل عقلي ملفات، وقناته صاحبه واجهة ويب",
+  "scripts": {
+    "start": "python3 web.py",
+    "status": "python3 agent.py status",
+    "digest": "python3 agent.py digest"
+  }
+}

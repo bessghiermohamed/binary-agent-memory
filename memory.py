@@ -261,20 +261,21 @@ def find_approval(aid: str) -> dict[str, Any] | None:
 
 # ---------------------------------------------------------------- المحادثات
 
-def _conversations_path() -> str:
+def _conversations_path(channel: str = "web") -> str:
     os.makedirs(CONVERSATIONS_DIR, exist_ok=True)
-    return os.path.join(CONVERSATIONS_DIR, "recent.jsonl")
+    safe = "".join(c for c in channel if c.isalnum() or c in "-_") or "web"
+    return os.path.join(CONVERSATIONS_DIR, f"{safe}.jsonl")
 
 
-def log_message(role: str, text: str) -> None:
-    entry = {"ts": now(), "role": role, "text": text}
+def log_message(role: str, text: str, *, channel: str = "web") -> None:
+    entry = {"ts": now(), "role": role, "channel": channel, "text": text}
     with _lock:
-        with open(_conversations_path(), "a", encoding="utf-8") as f:
+        with open(_conversations_path(channel), "a", encoding="utf-8") as f:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
-def recent_messages(limit: int = 40) -> list[dict[str, Any]]:
-    path = _conversations_path()
+def recent_messages(limit: int = 40, *, channel: str = "web") -> list[dict[str, Any]]:
+    path = _conversations_path(channel)
     if not os.path.exists(path):
         return []
     with open(path, "r", encoding="utf-8") as f:
