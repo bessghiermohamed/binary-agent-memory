@@ -9,26 +9,26 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• الفساد في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B3%D8%A7%D8%AF_%D9%81%D9%8A_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1 — تراجعت الجزائر مقارنة ببعض دول المغرب العربي مثل تونس",
+    "summary": "• مجلس المحاسبة (الجزائر) — https://ar.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9_(%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1) — المعدلة بموجب القانون",
     "ok": true,
-    "ts": 1790207750654
+    "ts": 1790215573224
   },
   "lastInitiativeAt": 1789932511919,
-  "lastChainDispatchAt": 1790207740004,
+  "lastChainDispatchAt": 1790215574303,
   "chainDispatchLog": [
-    1790207740004
+    1790215574303
   ],
   "nextWakeAt": 0,
-  "chainCount": 2,
+  "chainCount": 3,
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 2,
-    "ticks": 2
+    "llm": 3,
+    "ticks": 3
   },
   "totals": {
-    "ticks": 117,
-    "llm": 294,
+    "ticks": 118,
+    "llm": 295,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,6 +40,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -49,8 +50,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
+    "lastProvider": "mistral",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790207751695
+    "at": 1790215574303
   }
 }
