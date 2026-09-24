@@ -48,5 +48,35 @@
     "insights": "insights.jsonl",
     "approvals": "approvals.json",
     "conversations": "conversations/"
+  },
+  "legacy_runtime": {
+    "ownerChatId": "6169851983",
+    "ownerName": "Reverend insanity",
+    "lastChainDispatchAt": 1790282584304,
+    "chainCount": 3,
+    "totals": {
+      "ticks": 126,
+      "llm": 308,
+      "goalsDone": 5,
+      "startedAt": 1789924181663
+    },
+    "meta": {
+      "repo": "bessghiermohamed/binary-agent-memory",
+      "built": "2026-09-21"
+    },
+    "llmSnapshot": {
+      "ready": [
+        "gemini",
+        "cohere",
+        "mistral",
+        "cloudflare",
+        "huggingface-qwen",
+        "grok",
+        "groq",
+        "huggingface"
+      ],
+      "lastProvider": "mistral",
+      "lastError": "HTTP 402: requires more credits (recorded 2026-09-24, kept as history)"
+    }
   }
 }
