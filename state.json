@@ -9,9 +9,9 @@
   },
   "lastAction": {
     "tool": "web_search",
-    "summary": "• تأثير صناعة البترول على البيئة في نيجيريا — https://ar.wikipedia.org/wiki/%D8%AA%D8%A3%D8%AB%D9%8A%D8%B1_%D8%B5%D9%86%D8%A7%D8%B9%D8%A9_%D8%A7%D9%84%D8%A8%D8%AA%D8%B1%D9%88%D9%84_%D8%B9%D9%84%D9%89_",
+    "summary": "• الفساد في الجزائر — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%B3%D8%A7%D8%AF_%D9%81%D9%8A_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1 — النفط عام 1973 الحكومة من إطلاق برنامج واسع للتصنيع و",
     "ok": true,
-    "ts": 1790254283149
+    "ts": 1790254296561
   },
   "lastInitiativeAt": 1789932511919,
   "lastChainDispatchAt": 1790254284188,
@@ -23,12 +23,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-24",
-    "llm": 6,
-    "ticks": 6
+    "llm": 7,
+    "ticks": 7
   },
   "totals": {
-    "ticks": 121,
-    "llm": 298,
+    "ticks": 122,
+    "llm": 299,
     "goalsDone": 5,
     "startedAt": 1789924181663
   },
@@ -40,7 +40,6 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -50,8 +49,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 4",
-    "at": 1790254284188
+    "lastProvider": "huggingface-qwen",
+    "lastError": "HTTP 403 {\"code\":\"permission-denied\",\"error\":\"Your team aff5ac3b-afec-44f4-acc4-a2be0fce8a07 has either used all available credits or reache",
+    "at": 1790254297596
   }
 }
