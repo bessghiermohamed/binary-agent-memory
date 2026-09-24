@@ -29,15 +29,21 @@ MAX_BODY = 20_000
 
 # ---------------------------------------------------------------- الردود
 
-def _llm_reply(text: str) -> str | None:
-    """يحاول العقل اللغوي؛ يعيد None عند فشل الكل مع تسجيل الحلقات."""
+def _llm_reply(text: str) -> tuple[str, str] | None:
+    """يحاول العقل اللغوي؛ يعيد (نص صافٍ، مصدر) أو None عند فشل الكل."""
     try:
         reply, source = brain.think(text, history=memory.recent_messages(8, channel="web"))
     except Exception as exc:  # noqa: BLE001
         memory.log_event("llm_error", f"فشل العقل اللغوي: {str(exc)[:150]}")
         return None
     memory.log_event("llm_reply", f"رد من {source}", source=source)
-    return f"{reply}\n\n— عبر {source}"
+    # نص صافٍ بلا توقيع — التوقيع يُضاف فقط في الاستجابة للواجهة
+    clean = reply.strip()
+    for marker in ("— عبر", "— عبر", "- عبر", "— via", "- via"):
+        idx = clean.find(marker)
+        if idx > 0:
+            clean = clean[:idx].strip()
+    return clean, source
 
 
 def respond(text: str) -> str:
@@ -68,7 +74,7 @@ def respond(text: str) -> str:
     # الحديث الحر: العقل اللغوي أولًا (سلام/شكر/قدرات تمر عليه إن كان حيًا)
     llm = _llm_reply(text)
     if llm is not None:
-        return llm
+        return f"{llm[0]}\n\n— عبر {llm[1]}"
 
     if low in ("قدراتك", "ماذا تستطيع", "what can you do"):
         names = ", ".join(sorted(tools_safe_names()))
@@ -175,7 +181,9 @@ class Handler(BaseHTTPRequestHandler):
                 return
             memory.log_message("owner", text[:4000], channel="web")
             reply = respond(text)
-            memory.log_message("agent", reply, channel="web")
+            # التوقيع يُفصل قبل الحفظ حتى لا يتضاعف في سياق المزوّد
+            clean = reply.split("\n\n— عبر ")[0].strip()
+            memory.log_message("agent", clean, channel="web")
             memory.log_event("web_message", f"رسالة من صاحبي عبر الويب: {text[:60]}",
                              channel="web")
             self._json({"reply": reply})
