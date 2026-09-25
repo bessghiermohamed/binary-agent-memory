@@ -559,8 +559,8 @@ async function ping(){
       $('approvals').querySelectorAll('button').forEach(btn=>btn.onclick=()=>decide(btn.dataset.id,btn.dataset.d));
     } else ap.style.display='none';
     const c=s.counters||{};
-    $('mem').innerHTML='<div class="num"><b id="nEp">0</b><span>حلقة</span></div><div class="num"><b id="nIn">0</b><span>دروس</span></div><div class="num"><b id="nMsg">0</b><span>رسائل</span></div>';
-    countUp($('nEp'),c.episodes??0); countUp($('nIn'),c.insights??0); countUp($('nMsg'),c.messages??0);
+    $('mem').innerHTML='<div class="num"><b id="nEp">0</b><span>حلقة</span></div><div class="num"><b id="nIn">0</b><span>دروس</span></div><div class="num"><b id="nTk">0</b><span>نبضات اليوم</span></div>';
+    countUp($('nEp'),c.episodes??0); countUp($('nIn'),c.insights??0); countUp($('nTk'),c.ticks??0);
     $('tz').textContent=s.timezone||'—';
   }catch(e){ setConn(false,'الخادم غير متصل — إعادة المحاولة…'); }
 }
