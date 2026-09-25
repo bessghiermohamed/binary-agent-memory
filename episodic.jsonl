@@ -398,3 +398,36 @@
 {"ts":1790292457674,"text":"[23:27:37] initiative: لم يوجد أهداف نشطة ولا مهام مجدولة، لذا يجب أن أبحث عن تحديثات أو خبرات جديدة في ذاكرتي أو أبحث عن أخبار أو معلومات مفيد → web_search: web_search: تعذّر البحث (كل المصادر محجوبة) — جرّب صياغة أخرى","mode":"initiative","tool":"web_search","ok":false}
 {"ts":1790300512996,"text":"[01:41:52] initiative: لا أهداف نشطة ولا مهام مجدولة، لذا يجب أن أبحث عن تحديثات في خبراتي الأخيرة أو أخبار عالمية مفيدة، قبل أن أبحث عن معلوما → web_search: • نادي الوداد الرياضي — https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%88%D8%AF%D8%A7%D8%AF_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6%D9%8A —","mode":"initiative","tool":"web_search","ok":true}
 {"ts":1790318168606,"text":"[06:36:08] initiative: لا أهداف نشطة ولا مهام مجدولة، لذا يجب أن أبحث عن خبرات جديدة أو تحديثات في عالمي (تيارت أو الجزائر) قبل أن أبدأ أي عمل  → web_search: • الانتخابات الرئاسية الجزائرية 2019 — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%B1%D8%A6%D8%A7","mode":"initiative","tool":"web_search","ok":true}
+{"ts": "2026-09-25T09:55:51+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:02:59+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:03:06+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "GPT-4o"}}
+{"ts": "2026-09-25T10:03:08+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-25T10:03:08+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث عن اخر طراز من شات جبتي", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:03:21+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:03:21+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: لا بل استرا", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:03:49+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:03:49+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ماذا عن كلود", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:11:18+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:11:24+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "نص البحث"}}
+{"ts": "2026-09-25T10:11:26+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-25T10:11:26+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: من أنت؟ وماذا تستطيع أن تفعل؟", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:16:41+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:16:41+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث عن تيارت الجزائر", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:17:01+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:17:01+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: كم اخر اصدار من شات جبتي", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:17:11+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: هدف: تطوير نفسك", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:17:48+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:17:48+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: خطة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:27:03+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-25T10:27:14+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T10:27:14+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: سلام", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:12:24+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:12:43+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "GPT-4o vs GPT-4"}}
+{"ts": "2026-09-25T12:12:46+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-25T12:12:46+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ماهو احدث نموذج شات جبتي", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:13:01+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "اخر طراز من شات جبتي"}}
+{"ts": "2026-09-25T12:13:04+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-25T12:13:04+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث عن اخر طراز من شات جبتي", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:13:15+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "آخر تحديثات شات جبت"}}
+{"ts": "2026-09-25T12:13:24+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
+{"ts": "2026-09-25T12:13:24+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ياللزنا", "details": {"channel": "web"}}

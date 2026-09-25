@@ -20,7 +20,8 @@
   "counters": {
     "day": "2026-09-25",
     "llm": 4,
-    "ticks": 3
+    "ticks": 3,
+    "episodes": 33
   },
   "totals": {
     "ticks": 3,
