@@ -154,6 +154,8 @@ def state_payload() -> dict:
         "pending": approvals["pending"],
         "decided": approvals["decided"][-10:],
         "counters": state.get("counters", {}),
+        "insights": memory.insights(5),
+        "insights_total": len(memory.insights(1000)),
     }
 
 
