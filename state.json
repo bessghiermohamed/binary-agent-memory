@@ -7,23 +7,22 @@
     "tool": "none",
     "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1790367785599
+    "ts": 1790378468949
   },
-  "lastInitiativeAt": 1790367785599,
+  "lastInitiativeAt": 1790378468949,
   "lastChainDispatchAt": 1790318169633,
   "chainDispatchLog": [],
   "nextWakeAt": 0,
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "day": "2026-09-25",
-    "llm": 13,
-    "ticks": 6,
-    "episodes": 56
+    "day": "2026-09-26",
+    "llm": 1,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 6,
-    "llm": 18,
+    "ticks": 7,
+    "llm": 19,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -175,8 +174,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790367786689
+    "lastProvider": "mistral",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790378470043
   }
 }
