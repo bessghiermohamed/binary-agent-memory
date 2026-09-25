@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mugapgoz-hsg2",
+    "at": 1790300523404,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -162,6 +166,6 @@
     ],
     "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
-    "at": 1790300514017
+    "at": 1790300523404
   }
 }
