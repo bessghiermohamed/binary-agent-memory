@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mugl7voh-eio6",
-    "at": 1790318178783,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
