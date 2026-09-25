@@ -7,9 +7,9 @@
     "tool": "none",
     "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1790338100098
+    "ts": 1790355935530
   },
-  "lastInitiativeAt": 1790338100098,
+  "lastInitiativeAt": 1790355935530,
   "lastChainDispatchAt": 1790318169633,
   "chainDispatchLog": [],
   "nextWakeAt": 0,
@@ -17,13 +17,13 @@
   "scheduled": [],
   "counters": {
     "day": "2026-09-25",
-    "llm": 11,
-    "ticks": 4,
+    "llm": 12,
+    "ticks": 5,
     "episodes": 56
   },
   "totals": {
-    "ticks": 4,
-    "llm": 16,
+    "ticks": 5,
+    "llm": 17,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -165,6 +165,7 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
+      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -174,8 +175,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "HTTP 403 {\"code\":\"permission-denied\",\"error\":\"Your team aff5ac3b-afec-44f4-acc4-a2be0fce8a07 has either used all available credits or reache",
-    "at": 1790338101134
+    "lastProvider": "cohere",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790355936759
   }
 }
