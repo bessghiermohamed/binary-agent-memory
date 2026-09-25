@@ -72,14 +72,38 @@ check("POST هدف جديد", s == 200 and "سجّلتُ" in j.get("reply", ""))
 s, j = get("/api/messages?channel=web")
 check("GET /api/messages", s == 200 and len(j.get("messages", [])) > 2)
 
-# 9) 404
+# 9) قاعدة البيانات
+s, j = get("/api/db")
+check("GET /api/db", s == 200 and "stats" in j and "episodes" in j["stats"])
+s, j = get("/api/db?q=%D8%AA%D9%8A%D8%A7%D8%B1%D8%AA")
+check("GET /api/db?q= بحث", s == 200 and "hits" in j)
+
+# 10) بحث الويب
+s, j = get("/api/search?q=%D8%AA%D9%8A%D8%A7%D8%B1%D8%AA")
+check("GET /api/search", s == 200 and (j.get("ok") is True or "failed_backends" in j))
+
+# 11) الأخبار
+s, j = get("/api/news")
+check("GET /api/news", s == 200 and "results" in j)
+
+# 12) DeepSeek معلن بصدق
+s, j = get("/api/brain")
+check("حالة DeepSeek معلنة", "deepseek" in j and "available" in j["deepseek"])
+
+# 13) أمر محلي: تذكر واسترجع
+s, j = post("/api/messages", {"text": "تذكر: اختبار ذاكرة آلي عابر"})
+check("POST تذكر: (قاعدة البيانات)", s == 200 and "حفظت" in j.get("reply", ""))
+s, j = post("/api/messages", {"text": "استرجع اختبار ذاكرة آلي"})
+check("POST استرجع", s == 200 and "قاعدة بياناتي" in j.get("reply", ""))
+
+# 14) 404
 try:
     get("/api/nothing")
     check("404 للمسار المجهول", False)
 except urllib.error.HTTPError as e:
     check("404 للمسار المجهول", e.code == 404)
 
-# 10) رسالة فارغة
+# 15) رسالة فارغة
 try:
     post("/api/messages", {"text": ""})
     check("400 للرسالة الفارغة", False)

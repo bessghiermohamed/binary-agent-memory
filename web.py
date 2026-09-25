@@ -11,6 +11,10 @@
   POST /api/approvals/<id>/decision     قرار صاحبي: yes | no
   GET  /api/brain                       حالة العقل اللغوي وأدواته
 
+  GET  /api/db                           قاعدة البيانات: إحصاء + نشاط الأيام + بحث ?q=
+  GET  /api/search?q=...                 بحث ويب مجاني (ويكيبيديا/DDG/HN/GitHub)
+  GET  /api/news?q=...                   أخبار من موجزات RSS
+
 حماية: CORS للمسارات المتوقعة من Pages + حد معدل بسيط للرسائل.
 التشغيل:  python3 web.py   (يستمع على 0.0.0.0 ويقرأ PORT)
 """
@@ -26,6 +30,8 @@ from urllib.parse import urlparse, parse_qs
 import agent
 import brain
 import memory
+import memory_db
+import tools_search
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 INDEX_PATH = os.path.join(BASE_DIR, "web", "index.html")
@@ -113,6 +119,55 @@ def respond(text: str) -> str:
                     f"مثال: خطة {gid} اقرأ الويب:... | تذكّر:...")
         return "سمِّ الهدف أولًا."
 
+    # أوامر المصادر وقاعدة البيانات — محلية بلا مزوّد، ومصدر كل سطر مذكور.
+    # إن لم تُجب المصادر شيئًا، نُكمل بعقله اللغوي بصدق بدل رد فاشل.
+    if low.startswith("ابحث"):
+        rest = t[4:].strip() if len(t) > 4 else ""
+        if rest.startswith(":"):
+            rest = rest[1:].strip()
+        for pref in ("لي عن ", "عن ", "في "):
+            if rest.startswith(pref):
+                rest = rest[len(pref):].strip()
+        if not rest:
+            return "اكتب: ابحث <موضوع> وسأجلب من ويكيبيديا وDuckDuckGo وHacker News وGitHub."
+        if len(rest.split()) <= 8:  # عبارة قصيرة = أمر بحث صريح
+            r = tools_search.search_web(rest[:200])
+            if r.get("ok"):
+                lines = [f"• {i['title']}\n  {i['url']}\n  {i['snippet'][:180]}" for i in r["results"][:5]]
+                via = "+".join(sorted({i.get("via", "web") for i in r["results"]}))
+                return f"نتائج البحث عن «{rest}»:\n" + "\n".join(lines) + f"\n\n— عبر {via}"
+        # نتائج فارغة أو سؤال حر طويل: يُكمل بالعقل اللغوي أدناه
+
+    elif low.startswith("أخبار") or low.startswith("اخبار") or low == "news":
+        q = t[5:].strip() if len(t) > 5 else ""
+        if q.startswith(":"):
+            q = q[1:].strip()
+        if q.startswith("عن "):
+            q = q[3:].strip()
+        r = tools_search.news_search(q[:200])
+        if r.get("ok"):
+            lines = [f"• {i['title']}\n  {i['url']}" for i in r["results"][:6]]
+            via = "+".join(sorted({i.get("via", "rss") for i in r["results"]}))
+            where = f" عن «{q}»" if q else ""
+            return f"أحدث الأخبار{where}:\n" + "\n".join(lines) + f"\n\n— عبر {via}"
+        # لا أخبار مطابقة: يُكمل بالعقل اللغوي أدناه
+
+    if low.startswith("تذكر:") or low.startswith("تذكير:"):
+        note = t.split(":", 1)[1].strip()
+        if not note:
+            return "اكتب: تذكر: <النص> وسأحفظه في قاعدة بياناتي للأبد."
+        rid = memory_db.remember(note, kind="owner_note")
+        memory.log_event("owner_remember", f"حفظ صاحبي ذكرى #{rid} في قاعدة البيانات", db_id=rid)
+        return f"حفظتُها في قاعدة بياناتي (ذكرى #{rid}) — لن تضيع، وستجدها بالبحث النصي الكامل."
+
+    if low.startswith("استرجع"):
+        q = t.split(":", 1)[1].strip() if ":" in t else (t.split(" ", 1)[1].strip() if " " in t else "")
+        hits = memory_db.recall(q or "", limit=5)
+        if not hits:
+            return "لا شيء مطابق في قاعدة بياناتي حتى الآن."
+        return "من قاعدة بياناتي:\n" + "\n".join(
+            f"• {h['text'][:160]} ({h['kind']}، {h['ts'][:10]})" for h in hits)
+
     # الحديث الحر: العقل اللغوي أولًا (سلام/شكر/قدرات تمر عليه إن كان حيًا)
     llm = _llm_reply(text)
     if llm is not None:
@@ -156,6 +211,9 @@ def state_payload() -> dict:
         "counters": state.get("counters", {}),
         "insights": memory.insights(5),
         "insights_total": len(memory.insights(1000)),
+        "deepseek": brain.deepseek_status(),
+        "memory_db": memory_db.stats(),
+        "memory_days": memory_db.days_report(7),
     }
 
 
@@ -221,6 +279,20 @@ class Handler(BaseHTTPRequestHandler):
             self._json({"pending": a["pending"], "decided": a["decided"][-20:]})
         elif parsed.path == "/api/brain":
             self._json(brain.capabilities())
+        elif parsed.path == "/api/db":
+            q = parse_qs(parsed.query)
+            payload = {"stats": memory_db.stats(), "days": memory_db.days_report(7)}
+            kw = (q.get("q") or [""])[0].strip()
+            if kw:
+                payload["query"] = kw
+                payload["hits"] = memory_db.recall(kw, limit=8)
+            self._json(payload)
+        elif parsed.path == "/api/search":
+            q = parse_qs(parsed.query)
+            self._json(tools_search.search_web((q.get("q") or [""])[0][:200]))
+        elif parsed.path == "/api/news":
+            q = parse_qs(parsed.query)
+            self._json(tools_search.news_search((q.get("q") or [""])[0][:200]))
         else:
             self._json({"error": "لا أعرف هذا الطريق"}, 404)
 

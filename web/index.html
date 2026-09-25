@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>بيناري — عقل يسمعك</title>
 <meta name="description" content="بيناري: وكيل ذكي مستقل بذاكرة حقيقية من ملفات، يبحث في الويب ويتذكر ويتعلم — بلا كذب.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101418'/%3E%3Ccircle cx='26' cy='30' r='9' fill='none' stroke='%2349d3b8' stroke-width='3'/%3E%3Ccircle cx='40' cy='38' r='6' fill='%23e8b64c'/%3E%3Cpath d='M33 32l5 4' stroke='%2349d3b8' stroke-width='3'/%3E%3C/svg%3E">
@@ -224,19 +224,62 @@ form{display:flex;padding:0 28px 18px}
 .modal .mrow button.primary{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 :root[data-theme=dark] .modal .mrow button.primary{color:#0d1014}
 
-/* تجاوب */
+/* زر إغلاق الدرج (جوال فقط) */
+.sideclose{
+  display:none;margin:-4px 0 4px;justify-content:center;align-items:center;gap:8px;width:100%;
+  padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--panel2);
+  color:var(--dim);font-size:12.5px;cursor:pointer;transition:.18s;
+}
+.sideclose:hover{color:var(--ink);border-color:var(--line2)}
+
+/* تجاوب الهاتف أولًا */
 @media(max-width:980px){
+  body{height:100dvh;font-size:14.5px}
+  header{padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;gap:9px}
   main{grid-template-columns:1fr}
-  #sidebar{position:fixed;inset-block:0;inset-inline-end:0;width:min(330px,88vw);z-index:50;transform:translateX(-102%);transition:transform .28s ease;box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+  #sidebar{
+    position:fixed;inset-block:0;inset-inline-end:0;width:min(340px,92vw);z-index:55;
+    transform:translateX(-102%);transition:transform .28s ease;background:var(--panel);
+    box-shadow:-24px 0 70px rgba(0,0,0,.3);padding-top:calc(16px + env(safe-area-inset-top,0px));
+  }
   [dir=rtl] #sidebar{transform:translateX(102%)}
   #sidebar.open{transform:none!important}
+  #sidebarClose{display:flex}
+  #scrim{position:fixed;inset:0;z-index:54;background:rgba(10,12,16,.42);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s}
+  #scrim.on{opacity:1;pointer-events:auto}
   #drawerBtn{display:grid}
   .logo .sub{display:none}
-  .msg{max-width:95%}
-  #log{padding:16px 14px 6px}
-  .hints{padding:6px 14px 8px}
-  form{padding:0 14px 12px}
-  .sugg{grid-template-columns:1fr}
+  .conn{padding:5px 10px;font-size:10.5px}
+  .msg{max-width:93%}
+  .msg .av{width:26px;height:26px;margin-top:22px}
+  .bubble{font-size:14.5px;line-height:2;padding:11px 15px}
+  .composer textarea{font-size:16px}
+  #log{padding:14px 12px 6px}
+  .hints{
+    padding:6px 12px 8px;flex-wrap:nowrap;overflow-x:auto;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .hints::-webkit-scrollbar{display:none}
+  .hints button{flex:none;min-height:37px;padding:7px 14px;font-size:12px}
+  form{padding:0 12px calc(12px + env(safe-area-inset-bottom,0px))}
+  #send{width:44px;height:44px;border-radius:13px}
+  .sugg{grid-template-columns:1fr;gap:10px}
+  .sugg button{padding:14px 15px}
+  .hero h2{font-size:19px}
+  .hero p{font-size:12.5px}
+  .nums{gap:6px}
+  .num{padding:10px 4px}
+  .num b{font-size:18px}
+  .num span{font-size:9px}
+  .sect{padding:13px}
+  .approvals .btns button{min-height:42px}
+  #toasts{bottom:calc(88px + env(safe-area-inset-bottom,0px));inset-inline-start:12px}
+  .modal{padding:18px}
+  .modal input{padding:12px 14px;font-size:13px}
+}
+@media(pointer:coarse){
+  .msg .acts{opacity:1}
+  .iconbtn{width:40px;height:40px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
@@ -262,13 +305,16 @@ form{display:flex;padding:0 28px 18px}
 </header>
 
 <main>
+  <div id="scrim" aria-hidden="true"></div>
   <section id="chatwrap" aria-label="المحادثة">
     <div id="log" aria-live="polite"></div>
     <div class="hints" id="hints">
       <button data-t="حالة"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>حالة</button>
       <button data-t="ملخص"><svg class="ic" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 011 1v16a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1zM9 8h6M9 12h6M9 16h4"/></svg>ملخص</button>
       <button data-t="موافقات"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 118 0v3"/></svg>الموافقات</button>
+      <button data-t="أخبار "><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h12a1 1 0 011 1v13H6a2 2 0 01-2-2V5z"/><path d="M17 9h3v8a2 2 0 01-2 2"/><path d="M7 9h7M7 13h7M7 17h4"/></svg>أخبار…</button>
       <button data-t="ابحث عن "><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>ابحث…</button>
+      <button data-t="استرجع "><svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>ذاكرته</button>
       <button data-t="هدف: "><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>هدف جديد</button>
     </div>
     <form id="f" autocomplete="off">
@@ -280,6 +326,7 @@ form{display:flex;padding:0 28px 18px}
   </section>
 
   <aside id="sidebar" aria-label="حالة العقل">
+    <button class="sideclose" id="sidebarClose" aria-label="إغلاق اللوحة">✕ إغلاق اللوحة</button>
     <div class="sect">
       <h2><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>عقله اللغوي</h2>
       <div id="brain"><div class="empty">…يتصل</div></div>
@@ -299,6 +346,8 @@ form{display:flex;padding:0 28px 18px}
     <div class="sect">
       <h2><svg class="ic" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V4a1 1 0 00-1-1H6.5A2.5 2.5 0 004 5.5v14zM4 19.5A2.5 2.5 0 006.5 22H20v-5"/></svg>ذاكرته الحية</h2>
       <div class="nums" id="mem"><div class="empty">…</div></div>
+      <div class="row" style="margin-top:8px"><span class="k">قاعدة بياناته (SQLite)</span><span class="tag ok">FTS5</span></div>
+      <div class="nums" id="dbstats" style="margin-top:7px"><div class="empty">…</div></div>
       <div id="lessonBox"></div>
       <div class="row" style="margin-top:8px"><span class="k">توقيته</span><span id="tz" style="font-family:var(--mono);font-size:10.5px">—</span></div>
     </div>
@@ -333,15 +382,19 @@ var ICONS={
   check:'<svg class="ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
   search:'<svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>',
   doc:'<svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6"/></svg>',
+  db:'<svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>',
   brain:'<svg class="ic" viewBox="0 0 24 24"><circle cx="9.5" cy="10.5" r="4.5"/><circle cx="16" cy="15.5" r="3"/><path d="M12.6 12.2l2.4 2"/></svg>',
   target:'<svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg>',
   bulb:'<svg class="ic" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0012 2z"/></svg>',
   user:'<svg class="ic" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>'
 };
-var TOOL_ICONS={SEARCH:ICONS.search,URL:ICONS.doc,MEMORY:ICONS.brain,GOALS:ICONS.target,INSIGHT:ICONS.bulb};
+var TOOL_ICONS={SEARCH:ICONS.search,NEWS:ICONS.doc,URL:ICONS.doc,MEMORY:ICONS.brain,REMEMBER:ICONS.db,RECALL:ICONS.db,DB:ICONS.db,GOALS:ICONS.target,INSIGHT:ICONS.bulb};
 var TOOL_DOCS=[
-  ['SEARCH','بحث حقيقي في ويكيبيديا وDuckDuckGo، بلا مفاتيح'],
+  ['SEARCH','بحث حقيقي: ويكيبيديا + DuckDuckGo + Hacker News + GitHub'],
+  ['NEWS','أخبار حية من موجزات RSS عربية وعالمية'],
   ['URL','قراءة نص أي صفحة ويب (قراءة فقط)'],
+  ['REMEMBER','حفظ ذكرى في قاعدة بياناته الدائمة'],
+  ['RECALL','بحث نصي كامل في كل ذاكرته (SQLite FTS5)'],
   ['MEMORY','استرجاع دروسه من دفتر خبراته'],
   ['GOALS','مراجعة أهدافه المفتوحة من ملفه'],
   ['INSIGHT','حفظ درس جديد لحالي']
@@ -488,6 +541,15 @@ function renderTools(list){
     return '<div class="toolrow"><div><div class="nm">'+d[0]+'</div><div class="td">'+d[1]+'</div></div><span class="st '+(on?'on':'off')+'"></span></div>';
   }).join('');
 }
+function renderDb(db){
+  if(!db)return;
+  var box=$('dbstats');if(!box)return;
+  box.innerHTML=
+    '<div class="num"><b>'+db.episodes+'</b><span>حدثًا</span></div>'
+   +'<div class="num"><b>'+db.messages+'</b><span>رسالة</span></div>'
+   +'<div class="num"><b>'+db.insights+'</b><span>درسًا</span></div>'
+   +'<div class="num"><b>'+db.size_kb+'</b><span>KB</span></div>';
+}
 function renderGoals(goals){
   if(!goals.length){$('goals').innerHTML='<div class="empty">لا أهداف مفتوحة الآن</div>';return}
   $('goals').innerHTML=goals.map(function(g){
@@ -511,10 +573,11 @@ function renderApprovals(pending){
   $('approvals').querySelectorAll('button').forEach(function(b){b.onclick=function(){decide(b.dataset.id,b.dataset.d)}});
 }
 function renderBrain(b){
-  var prov=(b.g4f_keyless_order||[])[0]||'—',keys=(b.env_keys_present||[]).length;
+  var keys=(b.env_keys_present||[]).length,ds=b.deepseek||{};
+  var dsLabel=ds.available?({official_api:'رسمي',openrouter_free:'عبر OpenRouter',llm7_key:'عبر LLM7',llm7_keyless:'عبر LLM7 (مجاني)'}[ds.mode]||ds.mode):'غير متوفر';
   $('brain').innerHTML=
-    '<div class="row"><span class="k">المزوّد الأول</span><span class="tag '+(b.llm_enabled?'ok':'warn')+'">'+esc(b.llm_enabled?prov:'معطّل')+'</span></div>'
-   +'<div class="row"><span class="k">احتياط</span><span>'+Math.max(0,(b.g4f_keyless_order||[]).length-1)+' مزوّد</span></div>'
+    '<div class="row"><span class="k">DeepSeek</span><span class="tag '+(ds.available?'ok':'warn')+'">'+esc(dsLabel)+'</span></div>'
+   +'<div class="row"><span class="k">احتياط</span><span>'+esc((b.g4f_keyless_order||[]).join('، ')||'—')+'</span></div>'
    +'<div class="row"><span class="k">مفاتيح بيئة</span><span>'+(keys?keys:'لا شيء')+'</span></div>'
    +'<div class="row"><span class="k">بحث الويب</span><span class="tag '+(b.web_search?'ok':'warn')+'">'+(b.web_search?'يعمل':'متوقف')+'</span></div>';
 }
@@ -528,6 +591,7 @@ function renderMem(s){
   $('lessonBox').innerHTML=ins.length?
     '<div class="lesson"><b>آخر درس '+((s.insights_total>1)?'من '+s.insights_total:'')+'</b>'+esc((ins[0].lesson||'').slice(0,180))+'</div>':'';
   $('tz').textContent=s.timezone||'—';
+  renderDb(s.memory_db);
 }
 function ping(){
   return api('/api/health').then(function(h){
@@ -552,7 +616,7 @@ function hero(){
   '<div class="hero"><div class="mark"><svg viewBox="0 0 24 24" style="width:30px;height:30px"><circle cx="9.5" cy="10.5" r="4.5" stroke="currentColor" fill="none" stroke-width="1.6"/><circle cx="16" cy="15.5" r="3" fill="var(--amber)" stroke="none"/><path d="M12.6 12.2l2.4 2" stroke="currentColor" stroke-width="1.6"/></svg></div>'
   +'<h2>أنا بيناري</h2>'
   +'<p>وكيل مستقل عقله ملفات حقيقية: أهداف، حلقات، ودروس. أبحث في الويب بنفسي، أسترجع ما تعلمته، وأعلن مصدر كل ردّ. كل إجراء خطر يمرّ على موافقتك.</p>'
-  +'<div class="chips"><span>بحث ويب حقيقي</span><span>ذاكرة دائمة</span><span>بوابة موافقات</span><span>أدوات مجانية</span></div>'
+  +'<div class="chips"><span>بحث ويب حقيقي</span><span>أخبار RSS</span><span>قاعدة بيانات دائمة</span><span>بوابة موافقات</span></div>'
   +'<div class="sugg">'
   +'<button data-t="من أنت؟ وماذا تستطيع أن تفعل؟"><span class="si">'+ICONS.brain+'</span><span><b>تعرّف عليه</b><small>اسأله عن نفسه وقدراته الحقيقية</small></span></button>'
   +'<button data-t="ابحث عن تيارت الجزائر"><span class="si">'+ICONS.search+'</span><span><b>جرّب بحثه</b><small>سيبحث في ويكيبيديا فعلًا ويسمّي مصدره</small></span></button>'
@@ -578,8 +642,14 @@ $('apiSave').onclick=function(){
   $('serverModal').classList.remove('open');toast('سيتصل بالعنوان الجديد عند إعادة التحميل','ok');
 };
 $('serverModal').addEventListener('click',function(e){if(e.target.id==='serverModal')e.target.classList.remove('open')});
-$('drawerBtn').onclick=function(){$('sidebar').classList.toggle('open')};
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){$('serverModal').classList.remove('open');$('sidebar').classList.remove('open')}});
+$('drawerBtn').onclick=function(){$('sidebar').classList.add('open');$('scrim').classList.add('on')};
+function closeDrawer(){
+  $('sidebar').classList.remove('open');
+  var s=$('scrim');if(s)s.classList.remove('on');
+}
+var scb=$('sidebarClose');if(scb)scb.onclick=closeDrawer;
+var scm=$('scrim');if(scm)scm.onclick=closeDrawer;
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDrawer();$('serverModal').classList.remove('open')}});
 
 /* ===== إقلاع ===== */
 hero();loadHistory();ping();setInterval(ping,20000);

@@ -18,6 +18,12 @@ try:
 except Exception:  # pragma: no cover
     TZ = timezone.utc
 
+# قاعدة بيانات الذاكرة: إضافة فوق الملفات، وأي فشل فيها لا يعطل الذاكرة أبدًا
+try:
+    import memory_db as _db
+except Exception:  # pragma: no cover
+    _db = None
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 FILES = {
@@ -124,6 +130,11 @@ def add_goal(title: str, *, priority: int = 2, note: str = "") -> dict[str, Any]
     }
     goals["goals"].append(goal)
     save_goals(goals)
+    if _db is not None:
+        try:
+            _db.sync_goals(goals["goals"])
+        except Exception:  # noqa: BLE001
+            pass
     return goal
 
 
@@ -134,6 +145,11 @@ def update_goal_status(gid: str, status: str) -> dict[str, Any] | None:
             g["status"] = status
             g["updated"] = now()
             save_goals(goals)
+            if _db is not None:
+                try:
+                    _db.sync_goals(goals["goals"])
+                except Exception:  # noqa: BLE001
+                    pass
             return g
     return None
 
@@ -152,6 +168,11 @@ def log_event(kind: str, summary: str, **details: Any) -> dict[str, Any]:
         path = _path("episodic")
         with open(path, "a", encoding="utf-8") as f:
             f.write(json.dumps(episode, ensure_ascii=False) + "\n")
+    if _db is not None:
+        try:
+            _db.log_event(kind, summary, details or {}, ts=episode["ts"])
+        except Exception:  # noqa: BLE001
+            pass
     state = load_state()
     state["counters"]["episodes"] = state["counters"].get("episodes", 0) + 1
     save_state(state)
@@ -196,6 +217,11 @@ def add_insight(lesson: str, *, context: str = "") -> dict[str, Any]:
         insight = {"ts": now(), "lesson": lesson.strip(), "context": context.strip()}
         with open(path, "a", encoding="utf-8") as f:
             f.write(json.dumps(insight, ensure_ascii=False) + "\n")
+    if _db is not None:
+        try:
+            _db.add_insight(insight["lesson"], insight["context"], ts=insight["ts"])
+        except Exception:  # noqa: BLE001
+            pass
     state = load_state()
     state["counters"]["insights"] = state["counters"].get("insights", 0) + 1
     save_state(state)
@@ -272,6 +298,11 @@ def log_message(role: str, text: str, *, channel: str = "web") -> None:
     with _lock:
         with open(_conversations_path(channel), "a", encoding="utf-8") as f:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    if _db is not None:
+        try:
+            _db.log_message(channel, role, text, ts=entry["ts"])
+        except Exception:  # noqa: BLE001
+            pass
 
 
 def recent_messages(limit: int = 40, *, channel: str = "web") -> list[dict[str, Any]]:

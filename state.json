@@ -21,7 +21,7 @@
     "day": "2026-09-25",
     "llm": 10,
     "ticks": 3,
-    "episodes": 33
+    "episodes": 56
   },
   "totals": {
     "ticks": 3,
@@ -48,14 +48,18 @@
     "capabilities": [
       "web_chat",
       "llm_free_providers",
+      "deepseek_stack",
       "web_search",
+      "news_rss",
       "url_fetch",
       "memory_recall",
+      "sqlite_memory_db",
       "self_insight",
       "approval_gate",
       "rate_limit",
       "cors",
-      "self_learn"
+      "self_learn",
+      "mobile_first_ui"
     ]
   },
   "channel": {
@@ -134,19 +138,31 @@
   },
   "llm": {
     "engine": "g4f",
+    "deepseek_order": [
+      "DEEPSEEK_API_KEY (official)",
+      "OPENROUTER_API_KEY (deepseek free)",
+      "LLM7_API_KEY (deepseek-v4-pro)",
+      "LLM7 keyless via g4f"
+    ],
     "keyless_order": [
       "LLM7",
-      "Lambda",
-      "OIVSCode",
       "PollinationsAI",
       "Blackbox"
     ],
     "env_keys": [
-      "GROQ_API_KEY",
+      "DEEPSEEK_API_KEY",
       "OPENROUTER_API_KEY",
+      "LLM7_API_KEY",
+      "GROQ_API_KEY",
       "MISTRAL_API_KEY"
     ],
     "enabled": true
+  },
+  "memory_db": {
+    "engine": "sqlite",
+    "file": "binaary.db",
+    "fts": true,
+    "additive_over_files": true
   },
   "llmSnapshot": {
     "ready": [

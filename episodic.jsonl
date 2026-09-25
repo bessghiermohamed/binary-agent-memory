@@ -431,3 +431,26 @@
 {"ts": "2026-09-25T12:13:15+01:00", "kind": "agent_tool", "summary": "استعمل SEARCH من تلقاء نفسه", "details": {"tool": "SEARCH", "arg": "آخر تحديثات شات جبت"}}
 {"ts": "2026-09-25T12:13:24+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7+SEARCH", "details": {"source": "g4f:LLM7+SEARCH"}}
 {"ts": "2026-09-25T12:13:24+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ياللزنا", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:16+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:26+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:26+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:26+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: هدف: اختبار آلي عابر", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:28+01:00", "kind": "owner_remember", "summary": "حفظ صاحبي ذكرى #1 في قاعدة البيانات", "details": {"db_id": 1}}
+{"ts": "2026-09-25T12:38:28+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: تذكر: اختبار ذاكرة آلي عابر", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:28+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: استرجع اختبار ذاكرة آلي", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:40+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث تيارت", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:38:47+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: ابحث لي عن مشروع وسم مصدر يعمل، ورشّحني نموذج ذكاء مناسب مجا", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:40:03+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T12:40:03+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: كم درسًا في دفترك؟ وما حجم قاعدة بياناتك؟ جاوب من ملفاتك أنت", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:41:03+01:00", "kind": "web_boot", "summary": "واجهة الويب تعمل على المنفذ 8000 — العقل: مزوّدات مجانية (g4f/مفاتيح)", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:41:12+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T12:41:12+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: كم درسًا في دفترك؟ وما حجم قاعدة بياناتك؟", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:41:20+01:00", "kind": "agent_tool", "summary": "استعمل DB من تلقاء نفسه", "details": {"tool": "DB", "arg": "إحصاء"}}
+{"ts": "2026-09-25T12:41:21+01:00", "kind": "llm_reply", "summary": "رد من g4f:LLM7", "details": {"source": "g4f:LLM7"}}
+{"ts": "2026-09-25T12:41:21+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: بدون تكرار كلام قديم: أخبرني الآن كم عدد الدروس في دفترك وعد", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:42:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: حالة", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:42:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: موافقات", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:42:57+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: هدف: اختبار آلي عابر", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:42:59+01:00", "kind": "owner_remember", "summary": "حفظ صاحبي ذكرى #2 في قاعدة البيانات", "details": {"db_id": 2}}
+{"ts": "2026-09-25T12:42:59+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: تذكر: اختبار ذاكرة آلي عابر", "details": {"channel": "web"}}
+{"ts": "2026-09-25T12:42:59+01:00", "kind": "web_message", "summary": "رسالة من صاحبي عبر الويب: استرجع اختبار ذاكرة آلي", "details": {"channel": "web"}}

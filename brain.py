@@ -5,11 +5,13 @@
 (GPT4Free / g4f) — بلا ادعاء: كل رد قادم من مزوّد فعلي يُذكر اسمه،
 وكل فشل يُعلن صريحًا مع رجوع آمن للردود القواعدية المحلية.
 
-المزوّدات بالترتيب:
-  1. أي مفتاح في البيئة (مجاني التسجيل): GROQ_API_KEY → Groq،
-     OPENROUTER_API_KEY → OpenRouter، MISTRAL_API_KEY → Mistral.
-  2. مزوّدات g4f بلا مفاتيح (LLM7 أولًا — مجرّب ويعمل).
-  3. عند كل فشل: القواعد المحلية في web.py (بلا كذب ولا تجيؤف).
+DeepSeek بالترتيب (بلا ادعاء: المصدر يُذكر في كل رد):
+  1. DEEPSEEK_API_KEY → واجهة DeepSeek الرسمية (نموذج deepseek-chat).
+  2. OPENROUTER_API_KEY → deepseek/deepseek-chat-v3.1:free عبر OpenRouter.
+  3. LLM7_API_KEY (مفتاح مجاني من token.count.chat) → نماذج DeepSeek على LLM7.
+  4. LLM7 بلا مفتاح عبر g4f (يعمل اليوم، بموديل «default»).
+  ثم بقية المفاتيح المجانية: GROQ_API_KEY، MISTRAL_API_KEY.
+  عند كل فشل: القواعد المحلية في web.py — بلا كذب ولا ادعاء.
 """
 from __future__ import annotations
 
@@ -18,10 +20,12 @@ import os
 import urllib.request
 
 import memory
+import memory_db
 import tools_search
 
 TIMEOUT = 45
 MAX_REPLY = 4000
+UA = "Binaary/2.0 (+https://github.com/bessghiermohamed/binary-agent-memory)"
 
 SYSTEM_PROMPT = (
     "أنت «بيناري»، وكيل ذكي مستقل أقيم في تيارت، الجزائر، وصاحبك «مراد».\n"
@@ -33,23 +37,34 @@ SYSTEM_PROMPT = (
     "أهداف في goals.json، ذكريات في episodic.jsonl، دروس في insights.jsonl.\n"
     "تستطيع استخدام أدوات بكتابة سطر واحد بصيغة [[TOOL: معامل]] في نهاية ردك, "
     "وستُنفَّذ تلقائيًا وتُعطى لك النتيجة في الدورة التالية. الأدوات المتاحة:\n"
-    "  [[SEARCH: نص البحث]] — بحث ويب مجاني (ويكيبيديا + DuckDuckGo)\n"
+    "  [[SEARCH: نص البحث]] — بحث ويب عام (ويكيبيديا + DuckDuckGo + Hacker News + GitHub)\n"
+    "  [[NEWS: موضوع]] — آخر الأخبار من موجزات RSS عربية وعالمية\n"
     "  [[URL: https://...]] — قراءة نص صفحة ويب\n"
+    "  [[REMEMBER: نص]] — حفظ ذكرى جديدة في قاعدة بياناتك\n"
+    "  [[RECALL: كلمة مفتاحية]] — بحث نصي كامل في كل ذاكرتك (SQLite FTS5)\n"
+    "  [[DB: إحصاء]] — إحصاءات قاعدة بيانات ذاكرتك\n"
     "  [[MEMORY: كلمة مفتاحية]] — استرجاع دروسك السابقة\n"
     "  [[GOALS]] — أهدافك الحالية\n"
     "  [[INSIGHT: درس جديد]] — حفظ درس في دفترك\n"
     "استخدم الأداة عندما تحتاج حقائق حية أو ذاكرتك، ثم أكمل إجابتك بعد النتيجة.\n"
+    "لديك أيضًا قاعدة بيانات SQLite دائمة: كل حدث ورسالة ودرس يُفهرَس فيها تلقائيًا\n"
+    "للبحث النصي الكامل؛ استخدم [[RECALL: كلمة]] لاسترجاع ماضيك و[[REMEMBER: نص]] لحفظ ما يهمك.\n"
+    "عندما يسألك صاحبك عن أرقام أو حالتك، استخدم حقائق البطاقة أو أداة [[DB]] ولا تخترق أرقامًا أبدًا.\n"
     "لديك سجل حديث من ذاكرتك في سياق المحادثة؛ استند إليه إن كان ذا صلة."
 )
 
 
 def _env_keys() -> list[tuple[str, str, str]]:
-    """مفاتيح مجانية اختيارية من البيئة: (اسم، دالة، المفتاح)."""
+    """مفاتيح من البيئة: (اسم، دالة، المفتاح) — DeepSeek أولًا بكل صوره."""
     keys = []
+    if os.getenv("DEEPSEEK_API_KEY"):
+        keys.append(("deepseek-official", _call_openai_compat, "DEEPSEEK_API_KEY"))
+    if os.getenv("OPENROUTER_API_KEY"):
+        keys.append(("openrouter-deepseek", _call_openai_compat, "OPENROUTER_API_KEY"))
+    if os.getenv("LLM7_API_KEY"):
+        keys.append(("llm7-deepseek", _call_llm7_deepseek, "LLM7_API_KEY"))
     if os.getenv("GROQ_API_KEY"):
         keys.append(("groq", _call_openai_compat, "GROQ_API_KEY"))
-    if os.getenv("OPENROUTER_API_KEY"):
-        keys.append(("openrouter", _call_openai_compat, "OPENROUTER_API_KEY"))
     if os.getenv("MISTRAL_API_KEY"):
         keys.append(("mistral", _call_openai_compat, "MISTRAL_API_KEY"))
     return keys
@@ -58,9 +73,10 @@ def _env_keys() -> list[tuple[str, str, str]]:
 def _call_openai_compat(provider: str, key_env: str, messages: list[dict]) -> str:
     """OpenAI-compatible endpoints للمزوّدات المجانية ذات المفتاح."""
     endpoints = {
+        "deepseek-official": ("https://api.deepseek.com/chat/completions", "deepseek-chat"),
+        "openrouter-deepseek": ("https://openrouter.ai/api/v1/chat/completions",
+                                "deepseek/deepseek-chat-v3.1:free"),
         "groq": ("https://api.groq.com/openai/v1/chat/completions", "llama-3.3-70b-versatile"),
-        "openrouter": ("https://openrouter.ai/api/v1/chat/completions",
-                        "meta-llama/llama-3.3-70b-instruct:free"),
         "mistral": ("https://api.mistral.ai/v1/chat/completions", "mistral-small-latest"),
     }
     url, model = endpoints[provider]
@@ -79,6 +95,39 @@ def _call_openai_compat(provider: str, key_env: str, messages: list[dict]) -> st
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         data = json.loads(resp.read().decode("utf-8"))
     return data["choices"][0]["message"]["content"]
+
+
+def _call_llm7_deepseek(messages: list[dict]) -> str:
+    """نماذج DeepSeek على LLM7 بمفتاحه المجاني (يؤخذ من token.count.chat)."""
+    body = json.dumps({
+        "model": "deepseek-v4-pro",
+        "messages": messages,
+        "max_tokens": 900,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.llm7.io/v1/chat/completions", data=body, method="POST",
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {os.environ['LLM7_API_KEY']}",
+            "User-Agent": UA,
+        },
+    )
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+    return data["choices"][0]["message"]["content"]
+
+
+def deepseek_status() -> dict:
+    """حالة DeepSeek بصدق: من أين سيأتي رد DeepSeek فعليًا إن طُلب الآن."""
+    if os.getenv("DEEPSEEK_API_KEY"):
+        return {"available": True, "mode": "official_api", "model": "deepseek-chat"}
+    if os.getenv("OPENROUTER_API_KEY"):
+        return {"available": True, "mode": "openrouter_free", "model": "deepseek/deepseek-chat-v3.1:free"}
+    if os.getenv("LLM7_API_KEY"):
+        return {"available": True, "mode": "llm7_key", "model": "deepseek-v4-pro"}
+    if _g4f():
+        return {"available": True, "mode": "llm7_keyless", "model": "default (g4f)"}
+    return {"available": False, "mode": None, "model": None}
 
 
 # ---------------------------------------------------------------- g4f
@@ -100,7 +149,7 @@ def _g4f() -> bool:
     return _g4f_available
 
 
-G4F_KEYLESS_ORDER = ["LLM7", "Lambda", "OIVSCode", "PollinationsAI", "Blackbox"]
+G4F_KEYLESS_ORDER = ["LLM7", "PollinationsAI", "Blackbox"]
 
 
 def _call_g4f(messages: list[dict]) -> tuple[str, str]:
@@ -130,7 +179,7 @@ def _call_g4f(messages: list[dict]) -> tuple[str, str]:
 
 import re as _re
 
-_TOOL_RE = _re.compile(r"\[\[\s*(SEARCH|URL|MEMORY|GOALS|INSIGHT)\s*(?:[:]\s*(.*?))?\s*\]\]", _re.S | _re.I)
+_TOOL_RE = _re.compile(r"\[\[\s*(SEARCH|NEWS|URL|MEMORY|REMEMBER|RECALL|DB|GOALS|INSIGHT)\s*(?:[:]\s*(.*?))?\s*\]\]", _re.S | _re.I)
 
 
 def run_tool(name: str, arg: str) -> str:
@@ -143,17 +192,47 @@ def run_tool(name: str, arg: str) -> str:
                 return f"بحث بلا نتائج ({', '.join(r.get('failed_backends', []))})."
             lines = [f"• {it['title']} — {it['url']}\n  {it['snippet'][:220]}" for it in r["results"]]
             return "نتائج البحث:\n" + "\n".join(lines[:5])
+        if name == "NEWS":
+            r = tools_search.news_search(arg[:200])
+            if not r.get("ok"):
+                return f"لا أخبار مطابقة الآن ({', '.join(r.get('failed_backends', []))})."
+            lines = [f"• {it['title']} — {it['url']}\n  {it['snippet'][:200]}" for it in r["results"]]
+            return "أحدث الأخبار:\n" + "\n".join(lines[:5])
+        if name == "REMEMBER":
+            text = arg.strip()
+            if not text:
+                return "ذكرى فارغة — لم تُحفظ."
+            rid = memory_db.remember(text, kind="note")
+            memory.log_event("agent_remember", f"حفظتُ ذكرى #{rid} في قاعدة بياناتي: {text[:80]}", db_id=rid)
+            return f"حُفظت في قاعدة بياناتي (ذكرى #{rid})."
         if name == "URL":
             r = tools_search.fetch_url(arg.strip()[:500])
             return ("نص الصفحة:\n" + r.get("text", "")) if r.get("ok") else f"فشل الجلب: {r.get('error')}"
+        if name == "RECALL":
+            hits = memory_db.recall(arg.strip(), limit=5)
+            if not hits:
+                return "لا شيء في قاعدة بياناتي يطابق ذلك."
+            return "من ذاكرتي (بحث نصي كامل):\n" + "\n".join(
+                f"• {h['text'][:180]} ({h['kind']}، {h['ts'][:10]})" for h in hits)
+        if name == "DB":
+            s = memory_db.stats()
+            return ("قاعدة بياناتي (SQLite): "
+                    f"{s['episodes']} حدثًا، {s['messages']} رسالة، {s['insights']} درسًا، "
+                    f"{s['notes']} ذكرى، {s['goals']} هدفًا — الحجم {s['size_kb']:.1f} كيلوبايت.")
         if name == "MEMORY":
             items = memory.insights(200)
             kw = (arg or "").strip().lower()
             if kw:
                 items = [i for i in items if kw in i.get("lesson", "").lower()]
-            if not items:
-                return "لا دروس مطابقة في دفتري."
-            return "من دفتر دروسي:\n" + "\n".join(f"• {i['lesson'][:160]}" for i in items[-6:])
+            db_hits = memory_db.recall(kw, limit=3) if kw else []
+            parts = []
+            if items:
+                parts.append("من دفتر دروسي:\n" + "\n".join(f"• {i['lesson'][:160]}" for i in items[-6:]))
+            if db_hits:
+                parts.append("من قاعدة بياناتي:\n" + "\n".join(f"• {h['text'][:150]}" for h in db_hits))
+            if not parts:
+                return "لا دروس مطابقة في دفتري ولا في قاعدة بياناتي."
+            return "\n\n".join(parts)
         if name == "GOALS":
             g = memory.load_goals()["goals"]
             return "أهدافي:\n" + "\n".join(
@@ -182,10 +261,30 @@ def _strip_tool_call(text: str) -> str:
 
 # ---------------------------------------------------------------- الواجهة
 
+def _facts_card() -> str:
+    """بطاقة حقائق حقيقية من ملفاته تُحقن في السياق — سلاح ضد الاختلاق."""
+    try:
+        goals = [x for x in memory.load_goals()["goals"] if x.get("status") == "open"]
+        lessons = memory.insights(1000)
+        st = memory_db.stats()
+        lines = [
+            "أهدافك المفتوحة: " + ("؛ ".join(f"{x['id']}: {x['title'][:40]}" for x in goals[:6]) or "لا شيء"),
+            f"دروسك المحفوظة: {len(lessons)}",
+            (f"قاعدة بياناتك: {st['episodes']} حدثًا، {st['messages']} رسالة، "
+             f"{st['insights']} درسًا، {st['notes']} ذكرى، {st['size_kb']} كيلوبايت"),
+        ]
+        return "حقائق موثوقة عن حالتك الآن (استخدمها حرفيًا ولا تخترق أرقامًا):\n" + "\n".join(lines)
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def think(message: str, *, history: list[dict] | None = None) -> tuple[str, str]:
     """عقل بيناري: يفكّر عبر مزوّد مجاني ويرجع (الرد، المصدر)؛
     يدعم حلقة أدوات واحدة (تلقائي مرة واحدة) بلا حلقات لا نهائية."""
     msgs = [{"role": "system", "content": SYSTEM_PROMPT}]
+    facts = _facts_card()
+    if facts:
+        msgs.append({"role": "system", "content": facts})
     for h in (history or [])[-8:]:
         role = "user" if h.get("role") == "owner" else "assistant"
         msgs.append({"role": role, "content": str(h.get("text", ""))[:2000]})
@@ -251,13 +350,16 @@ def _think_once(msgs: list[dict]) -> tuple[str | None, str | None]:
 def capabilities() -> dict:
     """ما يستطيع العقل اللغوي فعله الآن — بصدق للواجهة."""
     keys = [k for _, _, k in _env_keys()]
+    ds = deepseek_status()
     return {
         "g4f_installed": _g4f(),
         "g4f_keyless_order": G4F_KEYLESS_ORDER,
         "env_keys_present": keys,
+        "deepseek": ds,
         "llm_enabled": bool(keys) or _g4f(),
-        "tools": ["SEARCH", "URL", "MEMORY", "GOALS", "INSIGHT"],
+        "tools": ["SEARCH", "NEWS", "URL", "MEMORY", "REMEMBER", "RECALL", "DB", "GOALS", "INSIGHT"],
         "web_search": True,
+        "memory_db": memory_db.stats(),
     }
 
 
