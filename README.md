@@ -14,7 +14,7 @@ This repo IS the mind of [Murad](https://t.me/MohamedBebot), an autonomous agent
 - `agent.py` — the operating mind: plan → step → approve → digest
 - `web.py` + `web/index.html` — his voice: a dependency-free web chat UI (his channel, chosen by the owner over Telegram)
 - `brain.py` — his mind's voice: free LLM providers via GPT4Free (g4f), keyless first (LLM7 works now), optional free API keys, every reply signed with its source
-- `docs/index.html` — the published face on GitHub Pages (connects to the live `web.py`)
+- `index.html` + `docs/index.html` — the published face on GitHub Pages (served from repo root via Pages; both copies are identical and connect to the live `web.py`)
 - `tools_search.py` — free web search (Wikipedia AR/EN + DuckDuckGo) and page fetching, std-lib only, no keys
 - `test_web.py` — smoke tests for every endpoint (12 checks)
 
