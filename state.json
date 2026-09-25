@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mugapgoz-hsg2",
-    "at": 1790300523404,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
