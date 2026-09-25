@@ -3,21 +3,28 @@
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
-  "lastAction": null,
-  "lastInitiativeAt": 0,
-  "lastChainDispatchAt": 0,
-  "chainDispatchLog": [],
+  "lastAction": {
+    "tool": "web_search",
+    "summary": "• الانتخابات الرئاسية الجزائرية 2019 — https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA_%D8%A7%D9%84%D8%B1%D8%A6%D8%A7%D8%B3%D9%8A%D8%A9_%D8%A7%D9%84%D8%AC%D8",
+    "ok": true,
+    "ts": 1790318168606
+  },
+  "lastInitiativeAt": 1790318168606,
+  "lastChainDispatchAt": 1790318169633,
+  "chainDispatchLog": [
+    1790318169633
+  ],
   "nextWakeAt": 0,
-  "chainCount": 0,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
-    "episodes": 606,
-    "insights": 8,
-    "llm": 4
+    "day": "2026-09-25",
+    "llm": 4,
+    "ticks": 3
   },
   "totals": {
-    "ticks": 0,
-    "llm": 5,
+    "ticks": 3,
+    "llm": 9,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -139,5 +146,22 @@
       "MISTRAL_API_KEY"
     ],
     "enabled": true
+  },
+  "llmSnapshot": {
+    "ready": [
+      "gemini",
+      "openrouter",
+      "cohere",
+      "mistral",
+      "cloudflare",
+      "pollinations",
+      "huggingface-qwen",
+      "grok",
+      "groq",
+      "huggingface"
+    ],
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790318178783
   }
 }
