@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "muj19p1j-cwm1",
+    "at": 1790466069722,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -15,16 +19,16 @@
     1790457853229
   ],
   "nextWakeAt": 0,
-  "chainCount": 2,
+  "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "day": "2026-09-26",
-    "llm": 10,
-    "ticks": 7
+    "day": "2026-09-27",
+    "llm": 1,
+    "ticks": 0
   },
   "totals": {
     "ticks": 13,
-    "llm": 28,
+    "llm": 29,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
