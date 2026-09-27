@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mukfcjgp-2qxf",
+    "at": 1790550183251,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -178,6 +182,6 @@
     ],
     "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 4",
-    "at": 1790550175811
+    "at": 1790550183251
   }
 }
