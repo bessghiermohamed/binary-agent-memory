@@ -5,26 +5,24 @@
   "currentTask": null,
   "lastAction": {
     "tool": "send_message",
-    "summary": "أُرسلت رسالة إلى المالك (120 حرفًا)",
+    "summary": "أُرسلت رسالة إلى المالك (124 حرفًا)",
     "ok": true,
-    "ts": 1790513834992
+    "ts": 1790529832165
   },
-  "lastInitiativeAt": 1790513834992,
+  "lastInitiativeAt": 1790529832165,
   "lastChainDispatchAt": 1790513835938,
-  "chainDispatchLog": [
-    1790513835938
-  ],
+  "chainDispatchLog": [],
   "nextWakeAt": 0,
-  "chainCount": 3,
+  "chainCount": 0,
   "scheduled": [],
   "counters": {
     "day": "2026-09-27",
-    "llm": 11,
-    "ticks": 3
+    "llm": 12,
+    "ticks": 4
   },
   "totals": {
-    "ticks": 16,
-    "llm": 39,
+    "ticks": 17,
+    "llm": 40,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -176,8 +174,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "pollinations",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
-    "at": 1790513844265
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 1",
+    "at": 1790529833208
   }
 }
