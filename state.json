@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "muj5rjax-xbuz",
+    "at": 1790473620501,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -177,7 +181,7 @@
       "huggingface"
     ],
     "lastProvider": "cohere",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790473613011
+    "lastError": "HTTP 502 <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7",
+    "at": 1790473620501
   }
 }
