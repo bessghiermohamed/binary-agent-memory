@@ -5,26 +5,26 @@
   "currentTask": null,
   "lastAction": {
     "tool": "send_message",
-    "summary": "أُرسلت رسالة إلى المالك (139 حرفًا)",
+    "summary": "أُرسلت رسالة إلى المالك (98 حرفًا)",
     "ok": true,
-    "ts": 1790473611985
+    "ts": 1790492820913
   },
-  "lastInitiativeAt": 1790473611985,
-  "lastChainDispatchAt": 1790473613011,
+  "lastInitiativeAt": 1790492820913,
+  "lastChainDispatchAt": 1790492821987,
   "chainDispatchLog": [
-    1790473613011
+    1790492821987
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
     "day": "2026-09-27",
-    "llm": 2,
-    "ticks": 1
+    "llm": 3,
+    "ticks": 2
   },
   "totals": {
-    "ticks": 14,
-    "llm": 30,
+    "ticks": 15,
+    "llm": 31,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -176,8 +176,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cohere",
-    "lastError": "HTTP 502 <!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7",
-    "at": 1790473620501
+    "lastProvider": "cloudflare",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
+    "at": 1790492821987
   }
 }
