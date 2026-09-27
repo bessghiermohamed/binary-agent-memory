@@ -4,27 +4,27 @@
   "ownerChatId": "6169851983",
   "currentTask": null,
   "lastAction": {
-    "tool": "web_search",
-    "summary": "• أخبار اليوم (جريدة جزائرية) — https://ar.wikipedia.org/wiki/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D8%A7%D9%84%D9%8A%D9%88%D9%85_(%D8%AC%D8%B1%D9%8A%D8%AF%D8%A9_%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9) ",
+    "tool": "send_message",
+    "summary": "أُرسلت رسالة إلى المالك (139 حرفًا)",
     "ok": true,
-    "ts": 1790457851915
+    "ts": 1790473611985
   },
-  "lastInitiativeAt": 1790457851915,
-  "lastChainDispatchAt": 1790457853229,
+  "lastInitiativeAt": 1790473611985,
+  "lastChainDispatchAt": 1790473613011,
   "chainDispatchLog": [
-    1790457853229
+    1790473613011
   ],
   "nextWakeAt": 0,
-  "chainCount": 0,
+  "chainCount": 1,
   "scheduled": [],
   "counters": {
     "day": "2026-09-27",
-    "llm": 1,
-    "ticks": 0
+    "llm": 2,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 13,
-    "llm": 29,
+    "ticks": 14,
+    "llm": 30,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -176,8 +176,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "mistral",
-    "lastError": "This operation was aborted",
-    "at": 1790457902258
+    "lastProvider": "cohere",
+    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
+    "at": 1790473613011
   }
 }
