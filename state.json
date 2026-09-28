@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mulf739s-pxu2",
-    "at": 1790610395178,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
