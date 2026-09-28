@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mukkoc6u-68ho",
-    "at": 1790559131752,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
