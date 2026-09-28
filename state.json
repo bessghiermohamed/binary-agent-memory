@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mukkoc6u-68ho",
+    "at": 1790559131752,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -177,7 +181,7 @@
       "huggingface"
     ],
     "lastProvider": "cloudflare",
-    "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 7",
-    "at": 1790559124370
+    "lastError": "HTTP 500 {\"error\":\"ENOSPC: no space left on device, write\",\"status\":500,\"deprecation_notice\":\"NOTE: The Pollinations legacy text API is bein",
+    "at": 1790559131752
   }
 }
