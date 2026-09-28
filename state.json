@@ -5,26 +5,26 @@
   "currentTask": null,
   "lastAction": {
     "tool": "send_message",
-    "summary": "أُرسلت رسالة إلى المالك (153 حرفًا)",
+    "summary": "أُرسلت رسالة إلى المالك (141 حرفًا)",
     "ok": true,
-    "ts": 1790580570508
+    "ts": 1790610384758
   },
-  "lastInitiativeAt": 1790580570508,
-  "lastChainDispatchAt": 1790580571653,
+  "lastInitiativeAt": 1790610384758,
+  "lastChainDispatchAt": 1790610385949,
   "chainDispatchLog": [
-    1790580571653
+    1790610385949
   ],
   "nextWakeAt": 0,
-  "chainCount": 4,
+  "chainCount": 5,
   "scheduled": [],
   "counters": {
     "day": "2026-09-28",
-    "llm": 5,
-    "ticks": 3
+    "llm": 6,
+    "ticks": 4
   },
   "totals": {
-    "ticks": 21,
-    "llm": 47,
+    "ticks": 22,
+    "llm": 48,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -176,8 +176,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
+    "lastProvider": "cohere",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 3",
-    "at": 1790580579497
+    "at": 1790610385949
   }
 }
