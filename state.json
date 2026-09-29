@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mumbdlto-uxl4",
-    "at": 1790664446829,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
