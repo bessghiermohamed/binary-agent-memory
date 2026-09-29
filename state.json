@@ -5,26 +5,26 @@
   "currentTask": null,
   "lastAction": {
     "tool": "send_message",
-    "summary": "أُرسلت رسالة إلى المالك (133 حرفًا)",
+    "summary": "أُرسلت رسالة إلى المالك (122 حرفًا)",
     "ok": true,
-    "ts": 1790643836994
+    "ts": 1790664435030
   },
-  "lastInitiativeAt": 1790643836994,
-  "lastChainDispatchAt": 1790643838085,
+  "lastInitiativeAt": 1790664435030,
+  "lastChainDispatchAt": 1790664437065,
   "chainDispatchLog": [
-    1790643838085
+    1790664437065
   ],
   "nextWakeAt": 0,
-  "chainCount": 1,
+  "chainCount": 2,
   "scheduled": [],
   "counters": {
     "day": "2026-09-29",
-    "llm": 1,
-    "ticks": 1
+    "llm": 2,
+    "ticks": 2
   },
   "totals": {
-    "ticks": 24,
-    "llm": 63,
+    "ticks": 25,
+    "llm": 64,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -166,7 +166,6 @@
   "llmSnapshot": {
     "ready": [
       "gemini",
-      "openrouter",
       "cohere",
       "mistral",
       "cloudflare",
@@ -176,8 +175,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cloudflare",
-    "lastError": "HTTP 500 {\"error\":\"ENOSPC: no space left on device, write\",\"status\":500,\"deprecation_notice\":\"NOTE: The Pollinations legacy text API is bein",
-    "at": 1790643847152
+    "lastProvider": "mistral",
+    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 402 | huggingface-qwen: HTTP 402",
+    "at": 1790664437065
   }
 }
