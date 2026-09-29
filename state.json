@@ -1,9 +1,5 @@
 {
-  "lock": {
-    "by": "mulz430h-8huw",
-    "at": 1790643847151,
-    "ttlMs": 120000
-  },
+  "lock": null,
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
