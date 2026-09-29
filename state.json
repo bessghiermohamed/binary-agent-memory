@@ -1,5 +1,9 @@
 {
-  "lock": null,
+  "lock": {
+    "by": "mumbdlto-uxl4",
+    "at": 1790664446829,
+    "ttlMs": 120000
+  },
   "paused": false,
   "ownerChatId": "6169851983",
   "currentTask": null,
@@ -169,14 +173,13 @@
       "cohere",
       "mistral",
       "cloudflare",
-      "pollinations",
       "huggingface-qwen",
       "grok",
       "groq",
       "huggingface"
     ],
     "lastProvider": "mistral",
-    "lastError": "openrouter: HTTP 402 | pollinations: HTTP 402 | huggingface-qwen: HTTP 402",
-    "at": 1790664437065
+    "lastError": "This operation was aborted",
+    "at": 1790664446830
   }
 }
