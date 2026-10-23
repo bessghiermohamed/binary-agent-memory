@@ -7,9 +7,9 @@
     "tool": "none",
     "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1792782631929
+    "ts": 1792793123236
   },
-  "lastInitiativeAt": 1792782631929,
+  "lastInitiativeAt": 1792793123236,
   "lastChainDispatchAt": 1790664437065,
   "chainDispatchLog": [],
   "nextWakeAt": 0,
@@ -17,12 +17,12 @@
   "scheduled": [],
   "counters": {
     "day": "2026-10-23",
-    "llm": 5,
-    "ticks": 5
+    "llm": 6,
+    "ticks": 6
   },
   "totals": {
-    "ticks": 159,
-    "llm": 216,
+    "ticks": 160,
+    "llm": 217,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -174,8 +174,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "cohere",
+    "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 9",
-    "at": 1792782633410
+    "at": 1792793124614
   }
 }
