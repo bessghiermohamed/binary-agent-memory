@@ -7,22 +7,22 @@
     "tool": "none",
     "summary": "لا إجراء (none)",
     "ok": true,
-    "ts": 1794349393463
+    "ts": 1794362370941
   },
-  "lastInitiativeAt": 1794349393463,
+  "lastInitiativeAt": 1794362370941,
   "lastChainDispatchAt": 1790664437065,
   "chainDispatchLog": [],
   "nextWakeAt": 0,
   "chainCount": 0,
   "scheduled": [],
   "counters": {
-    "day": "2026-11-10",
-    "llm": 4,
-    "ticks": 4
+    "day": "2026-11-11",
+    "llm": 1,
+    "ticks": 1
   },
   "totals": {
-    "ticks": 246,
-    "llm": 303,
+    "ticks": 247,
+    "llm": 304,
     "goalsDone": 0,
     "startedAt": 1790283980581
   },
@@ -174,8 +174,8 @@
       "groq",
       "huggingface"
     ],
-    "lastProvider": "gemini",
+    "lastProvider": "cloudflare",
     "lastError": "HTTP 402 {\"error\":{\"message\":\"This request requires more credits, or fewer max_tokens. You requested up to 900 tokens, but can only afford 5",
-    "at": 1794349395107
+    "at": 1794362372192
   }
 }
